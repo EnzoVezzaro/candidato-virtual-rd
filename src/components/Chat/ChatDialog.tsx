@@ -27,7 +27,7 @@ const ChatDialog: React.FC = () => {
           <MessageCircle className="h-4 w-4" />
           <span className="sr-only">Abrir Chat</span>
         </Button>
-      </DialogTrigger>
+      </DialogTrigger> 
       <DialogContent className="mt-4 sm:max-w-[425px] md:max-w-[600px] lg:max-w-[800px] h-[80vh] flex flex-col">
         <DialogHeader>
           <DialogTitle>

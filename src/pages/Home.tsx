@@ -101,10 +101,10 @@ const Home = () => {
 
       {/* CTA section */}
       <section className="py-12 border-t border-gray-200 dark:border-gray-800">
-        <div className="bg-gradient-to-r from-candidate-primary to-candidate-secondary rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-candidate-primary to-candidate-secondary rounded-xl p-8">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">Habla conmigo directamente</h2>
-            <p className="mb-6">
+            <h2 className="text-white text-3xl font-bold mb-4">Habla conmigo directamente</h2>
+            <p className="mb-6 text-white">
               ¿Tienes preguntas sobre mis propuestas o quieres compartir tus inquietudes? Utiliza el asistente virtual para hablar conmigo en cualquier momento.
             </p>
             {/* Replace Link with ChatDialog */}
