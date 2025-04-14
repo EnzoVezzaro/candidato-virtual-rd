@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Send, Mic, MicOff } from 'lucide-react';
+import { X, Send, Mic, MicOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import candidateConfig from '@/config/candidate.config';
@@ -20,9 +20,10 @@ const INITIAL_MESSAGES: MessageType[] = [
 
 interface ChatInterfaceProps {
   initialQuestion?: string | null;
+  onClose?: () => void;
 }
 
-const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion }) => {
+const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose }) => {
   const [messages, setMessages] = useState<MessageType[]>(INITIAL_MESSAGES);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -175,45 +176,37 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion }) => {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-14rem)] max-h-[800px] bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 overflow-hidden">
-      {/* Chat header */}
-      <div className="p-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
-        <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 dark:border-gray-700">
-          <img 
-            src={candidateConfig.profileImage} 
-            alt={candidateConfig.name}
-            className="h-full w-full object-cover"
-          />
-        </div>
-        <div>
-          <h3 className="font-medium">{candidateConfig.name}</h3>
-          <p className="text-xs text-gray-500 dark:text-gray-400">
-            {candidateConfig.shortBio}
-          </p>
-        </div>
+    <div className="flex flex-col h-full bg-gray-100 rounded-lg relative overflow-hidden">
+      {/* Header */}
+      <div className="p-6 pb-4">
+        <p className="text-lg text-navy-800 mt-1">Por favor, asegúrate de activar tu micrófono.</p>
       </div>
 
-      {/* Chat messages area */}
-      <div className="flex-grow p-4 overflow-y-auto bg-gray-50 dark:bg-gray-900">
-        {messages.map((message) => (
-          <ChatMessage 
-            key={message.id} 
-            message={message} 
-            isLoading={message.id === 'loading'}
-          />
-        ))}
-        <div ref={messagesEndRef} />
+      {/* Chat area */}
+      <div className="flex-grow px-6 pb-6 overflow-y-auto">
+        <div className="rounded-lg p-4 shadow-sm h-full">
+          <div className="flex flex-col gap-3">
+            {messages.map((message) => (
+              <ChatMessage 
+                key={message.id} 
+                message={message} 
+                isLoading={message.id === 'loading'}
+              />
+            ))}
+            <div ref={messagesEndRef} />
+          </div>
+        </div>
       </div>
 
       {/* Input area */}
-      <div className="p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-        <div className="flex items-end gap-2">
+      <div className="px-6 pb-6 relative z-10">
+        <div className={`flex items-end gap-2 bg-white rounded-lg p-2 shadow-sm px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700`} style={{ opacity: !input ? 0.5 : 1 }}>
           <Textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyPress}
-            placeholder="Escribe tu mensaje aquí..."
-            className="min-h-[60px] resize-none focus-visible:ring-candidate-secondary"
+            placeholder="Type your message..."
+            className="h-full min-h-[88px] resize-none focus-visible:ring-candidate-secondary"
             disabled={isLoading}
           />
           <div className="flex flex-col gap-2">
@@ -232,18 +225,34 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion }) => {
               onClick={() => handleSendMessage()}
               variant="default"
               size="icon"
-              className="bg-candidate-secondary hover:bg-candidate-primary"
+              className="bg-blue-600 hover:bg-blue-700"
               disabled={!input.trim() || isLoading}
             >
               <Send size={18} />
             </Button>
           </div>
         </div>
-        {isLoading && (
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-            Generando respuesta...
-          </p>
-        )}
+      </div>
+
+      {/* Footer */}
+      <div className="px-6 pb-4 text-left text-sm text-gray-600">
+        <p>Esta conversación está siendo grabada con fines de<br />entrenamiento y monitoreo.</p>
+        <p className="mt-2">
+          <a href="#" className="text-blue-600">AI Ana Maria privacy policy.</a>
+        </p>
+      </div>
+
+      {/* AI Character */}
+      <div className="absolute right-0 bottom-0 w-1/3 h-2/3 pointer-events-none z-2">
+        <div className="relative w-full h-full">
+          <div className="absolute bottom-0 right-0 z-3">
+            <img 
+              src={candidateConfig.profileImage}
+              alt="AI Ana Maria" 
+              className="object-contain"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

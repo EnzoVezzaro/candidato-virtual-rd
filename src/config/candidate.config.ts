@@ -136,9 +136,9 @@ const candidateConfig: CandidateConfig = {
       apiKey: import.meta.env.VITE_PUBLIC_HUME,
     },
     output: {
-      provider: "huggingface",
-      voiceId: 'fishaudio/fish-speech-1.5',
-      apiKey: import.meta.env.VITE_PUBLIC_HUGGING_FACE,
+      provider: "elevenlabs",
+      voiceId: 'wBnAJRbu3cj93gnAm02O',
+      apiKey: import.meta.env.VITE_PUBLIC_ELEVEN_LABS,
     }
   },
   aiConfig: {

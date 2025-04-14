@@ -30,7 +30,9 @@ const ChatDialog: React.FC = () => {
       </DialogTrigger>
       <DialogContent className="mt-4 sm:max-w-[425px] md:max-w-[600px] lg:max-w-[800px] h-[80vh] flex flex-col">
         <DialogHeader>
-          <DialogTitle>Chat con el Candidato</DialogTitle>
+          <DialogTitle>
+          <h2 className="text-2xl font-bold text-navy-900">Chat con AI Ana Maria</h2>
+          </DialogTitle>
         </DialogHeader>
         <div className="flex-grow overflow-hidden pb-200">
           <ChatInterface />

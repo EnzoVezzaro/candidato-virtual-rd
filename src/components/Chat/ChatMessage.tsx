@@ -31,7 +31,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isLoading = false })
         isAssistant ? "justify-start" : "justify-end"
       )}
     >
-      {isAssistant && (
+      {/*isAssistant && (
         <Avatar className="h-10 w-10 border border-gray-200">
           <img 
             src={candidateConfig.profileImage} 
@@ -39,7 +39,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isLoading = false })
             className="h-full w-full object-cover"
           />
         </Avatar>
-      )}
+      )*/}
 
       <div 
         className={cn(
@@ -50,9 +50,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isLoading = false })
         )}
       >
         <div className="flex flex-col">
+          {/*
           <span className="text-xs font-medium mb-1">
             {isAssistant ? firstName : 'Tú'}
           </span>
+          */}
           <ReactMarkdown
             remarkPlugins={[remarkRehype]}
             rehypePlugins={[rehypeRaw, rehypeSanitize]}
@@ -76,11 +78,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isLoading = false })
         </div>
       </div>
 
-      {!isAssistant && (
+      {/*!isAssistant && (
         <Avatar className="h-10 w-10 bg-gray-200 dark:bg-gray-700">
           <span className="text-gray-600 dark:text-gray-300 font-medium">Tú</span>
         </Avatar>
-      )}
+      )*/}
     </div>
   );
 };
