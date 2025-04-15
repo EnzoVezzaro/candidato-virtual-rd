@@ -39,17 +39,48 @@ const useVoice = () => {
     };
   }, [voiceEnabled]); // We'll handle the dependencies properly below
   
-  // Start listening for voice input
   const startListening = useCallback(() => {
     if (!voiceEnabled) return;
-    
-    setState(prev => ({ ...prev, isListening: true, transcript: '', error: null }));
-    
-    // In production: Start speech recognition
-    // For now, we'll simulate with a timeout
-    setTimeout(() => {
-      stopListening();
-    }, 5000);
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      setState(prev => ({ ...prev, error: 'Speech recognition is not supported in this browser.' }));
+      return;
+    }
+
+    try {
+      const recognition = new (window.SpeechRecognition ||
+        window.webkitSpeechRecognition ||
+        window.mozSpeechRecognition ||
+        window.msSpeechRecognition)();
+
+        console.log('recognition: ', recognition);
+      recognition.lang = "es-ES";
+      recognition.onresult = (event: any) => {
+        const transcript = event.results[0][0].transcript;
+        console.log('transcript: ', transcript);
+        setState(prev => ({ ...prev, transcript: transcript, isListening: true }));
+      };
+
+      recognition.onstart = () => {
+        console.log('listening start...');
+        setState(prev => ({ ...prev, isListening: true }));
+      };
+
+      recognition.onend = () => {
+        console.log('listening stop...');
+        setState(prev => ({ ...prev, isListening: false }));
+      };
+
+      recognition.onerror = (event: any) => {
+        console.log('listening error: ', event);
+        setState(prev => ({ ...prev, error: `Error occurred in recognition: ${event.error}` }));
+      };
+
+      recognition.start();
+    } catch (error: any) {
+      setState(prev => ({ ...prev, error: `Error starting recognition: ${error.message}` }));
+    }
   }, [voiceEnabled]);
   
   // Stop listening

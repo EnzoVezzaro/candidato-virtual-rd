@@ -30,6 +30,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
   const [initialQuestionProcessed, setInitialQuestionProcessed] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { 
+    transcript,
     voiceEnabled, 
     isListening, 
     isSpeaking, 
@@ -37,6 +38,20 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
     stopListening, 
     speak 
   } = useVoice();
+
+  console.log('transcript: ', transcript);
+
+  useEffect(()=>{
+    if (transcript){
+      const userMessage: MessageType = {
+        id: uuidv4(),
+        content: transcript,
+        sender: 'user',
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, userMessage]);
+    }
+  }, [transcript])
 
   // Scroll to bottom when messages change
   useEffect(() => {
