@@ -72,11 +72,6 @@ const Footer = () => {
                   Biografía
                 </Link>
               </li>
-              <li>
-                <Link to="/chat" className="text-gray-600 hover:text-candidate-secondary dark:text-gray-400 dark:hover:text-candidate-accent">
-                  Chat Virtual
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -86,11 +81,11 @@ const Footer = () => {
             <p className="text-gray-600 dark:text-gray-400 mb-2">
               Para más información o para unirte a nuestra campaña:
             </p>
-            <a
-              href="mailto:contacto@anamariarodriguez.com"
+            <a 
+              href={`mailto:${candidateConfig.emailContact}`}
               className="text-candidate-secondary hover:underline dark:text-candidate-accent"
             >
-              contacto@anamariarodriguez.com
+              {candidateConfig.emailContact}
             </a>
           </div>
         </div>

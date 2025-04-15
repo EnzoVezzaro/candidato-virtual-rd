@@ -119,13 +119,22 @@ const Home = () => {
           {candidateConfig.values.map((value, index) => (
             <div 
               key={index}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow flex flex-col items-center text-center group"
             >
-              <h3 className="text-xl font-medium mb-3">{value}</h3>
+              <div className="flex items-center justify-center w-20 h-20 mb-2 p-3 rounded-full bg-gradient-to-br from-candidate-primary/10 to-candidate-secondary/10 group-hover:from-candidate-primary/20 group-hover:to-candidate-secondary/20 transition-colors duration-300">
+                {value.icon}
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100 group-hover:text-candidate-primary transition-colors duration-300">
+                {value.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                {value.description}
+              </p>
             </div>
           ))}
         </div>
-      </section>
+
+      </section> 
 
       {/* CTA section */}
       <section className="py-12 border-t border-gray-200 dark:border-gray-800">
@@ -138,7 +147,7 @@ const Home = () => {
               </div>
               <div className="absolute" style={{ zIndex: 2 }}>
                 <img 
-                  src={candidateConfig.profileImage} 
+                  src={candidateConfig.footerImage} 
                   alt={candidateConfig.name}
                   style={{ width: '100%', maxWidth: 414, maxHeight: 500, overflow: 'inherit', position: 'relative', bottom: 60 }}
                   className="object-cover"

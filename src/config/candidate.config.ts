@@ -9,11 +9,15 @@ import {
   AIProvider,
   LocalDiscussions
 } from '@/lib/providers/ai/types';
+import { Shield, UserCheck, Globe, Lightbulb, Users } from 'lucide-react';
+import React from 'react';
 
 export type CandidateConfig = {
   name: string;
   aiName: string;
+  emailContact: string;
   profileImage: string;
+  footerImage: string;
   shortBio: string;
   longBio: string;
   localDiscussions: LocalDiscussions[]
@@ -22,7 +26,12 @@ export type CandidateConfig = {
   proposals: Proposal[];
   education: string[];
   experience: string[];
-  values: string[];
+  values: {
+    id: string;
+    title: string;
+    description: string;
+    icon: React.ReactNode;
+  }[];
   vision: string;
   primaryColor: string;
   secondaryColor: string;
@@ -58,9 +67,11 @@ export type CandidateConfig = {
 const candidateConfig: CandidateConfig = {
   name: "Ana María Rodríguez",
   aiName: "AI María",
-  profileImage: "/imges/candidate.png",
+  profileImage: "/images/candidate.png",
+  footerImage: "/images/candidate.png",
+  emailContact: "contacto@anamariarodriguez.com",
   shortBio: "Economista, activista social y candidata a la gobernación comprometida con la justicia social y el desarrollo sostenible.",
-  longBio: "Las políticas de AI Ana Maria serán implementadas por la “verdadera” Ana María Rodríguez, quien asistirá al Parlamento; por lo tanto, también es importante que los votantes conozcan su trayectoria, actitudes y capacidades. <br /><br />Ana María Rodríguez es una economista con más de 15 años de experiencia en políticas públicas y desarrollo económico. Nacida y criada en una familia trabajadora, Ana María conoce de primera mano los desafíos que enfrentan las familias de clase media. Su carrera ha estado dedicada a crear oportunidades económicas para todos y luchar por un sistema más justo y equitativo.",
+  longBio: "Las políticas de AI Ana Maria serán implementadas por la 'verdadera' Ana María Rodríguez, quien asistirá al Gobierno; por lo tanto, también es importante que los votantes conozcan su trayectoria, actitudes y capacidades. <br /><br />Ana María Rodríguez es una economista con más de 15 años de experiencia en políticas públicas y desarrollo económico. Nacida y criada en una familia trabajadora, Ana María conoce de primera mano los desafíos que enfrentan las familias de clase media. Su carrera ha estado dedicada a crear oportunidades económicas para todos y luchar por un sistema más justo y equitativo.",
   localDiscussions: [
     {
       comment: "¿Qué crees que deberíamos hacer con el tema de la migración en el país?",
@@ -163,14 +174,39 @@ const candidateConfig: CandidateConfig = {
     "Investigadora en el Instituto de Políticas Públicas (2005-2010)"
   ],
   values: [
-    "Justicia social e igualdad de oportunidades",
-    "Transparencia y gobierno abierto",
-    "Desarrollo sostenible y responsabilidad ambiental",
-    "Innovación y adaptación tecnológica",
-    "Diversidad e inclusión"
+    {
+      id: "social-justice",
+      title: "Justicia social e igualdad de oportunidades",
+      description: "Trabajaré para crear un sistema donde todos tengan acceso equitativo a recursos, oportunidades y protecciones sociales independientemente de su origen.",
+      icon: React.createElement(Shield, { className: "text-candidate-primary" })
+    },
+    {
+      id: "transparency",
+      title: "Transparencia y gobierno abierto",
+      description: "Me comprometo a una gestión pública transparente donde la ciudadanía pueda participar activamente en la toma de decisiones y acceder a información clara.",
+      icon: React.createElement(UserCheck, { className: "text-candidate-primary" })
+    },
+    {
+      id: "sustainability",
+      title: "Desarrollo sostenible y responsabilidad ambiental",
+      description: "Impulsaré políticas que equilibren el crecimiento económico con la protección del medio ambiente, asegurando recursos para generaciones futuras.",
+      icon: React.createElement(Globe, { className: "text-candidate-primary" })
+    },
+    {
+      id: "innovation",
+      title: "Innovación y adaptación tecnológica",
+      description: "Promoveré la transformación digital inclusiva que mejore servicios públicos y facilite la participación ciudadana a través de tecnologías accesibles.",
+      icon: React.createElement(Lightbulb, { className: "text-candidate-primary" })
+    },
+    {
+      id: "diversity",
+      title: "Diversidad e inclusión",
+      description: "Defenderé una sociedad que celebre y proteja la diversidad en todas sus formas, garantizando derechos y oportunidades para todos los grupos sociales.",
+      icon: React.createElement(Users, { className: "text-candidate-primary" })
+    }
   ],
   vision: "Por un país próspero, justo y sostenible donde cada persona pueda desarrollar su potencial, con instituciones fuertes, economía dinámica y respeto por el medio ambiente.",
-  voiceEnabled: true,
+  voiceEnabled: false,
   voiceConfig: {
     input: {
       provider: "openai",
@@ -178,7 +214,7 @@ const candidateConfig: CandidateConfig = {
       apiKey: import.meta.env.VITE_PUBLIC_HUME,
     },
     output: {
-      provider: "elevenlabs",
+      provider: "none",
       voiceId: 'bis5ALyRHexz363PgC76',
       apiKey: import.meta.env.VITE_PUBLIC_ELEVEN_LABS,
     }

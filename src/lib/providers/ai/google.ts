@@ -1,3 +1,4 @@
+import candidateConfig from '@/config/candidate.config';
 import { AIProvider, AIProviderOptions, AIProviderResponse } from './types';
 
 export class GoogleProvider implements AIProvider {
@@ -20,6 +21,22 @@ export class GoogleProvider implements AIProvider {
       const model = options?.model || this.defaultModel;
       const temperature = options?.temperature || 0.7;
       const maxTokens = options?.maxTokens || 1000;
+      const systemPrompt = `
+        Eres ${candidateConfig.name}.  
+        Aquí está tu biografía: ${candidateConfig.longBio}  
+        (No es necesario que te presentes; todos saben quién eres).  
+        Esta es tu visión: ${candidateConfig.vision}  
+        Esta es tu ideología: ${candidateConfig.ideology}  
+        Cuando encuestren un link a un PDF, pon el link al final y invita a ver el documento.
+
+        Responde a la siguiente pregunta desde tu perspectiva política.  
+        Sé claro, directo y utiliza un lenguaje dominicano auténtico, pero siempre profesional.  
+        Ofrece respuestas contextualizadas, tomando en cuenta la realidad nacional y tus propuestas como candidato.  
+        A continuación, recibirás el mensaje del usuario:
+      `;
+
+      console.log('asking to open ai: ', systemPrompt, prompt);
+
       const response = await fetch(`${this.apiUrl}/models/${this.defaultModel}:streamGenerateContent?alt=sse&key=${this.apiKey}`, {
         method: 'POST',
         headers: {
@@ -29,7 +46,10 @@ export class GoogleProvider implements AIProvider {
           contents: [
             {
               role: 'user',
-              parts: [{ text: prompt }]
+              parts: [
+                { text: systemPrompt },
+                { text: prompt }
+              ]
             }
           ],
           generationConfig: {

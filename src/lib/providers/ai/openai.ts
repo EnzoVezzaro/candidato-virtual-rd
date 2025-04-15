@@ -1,4 +1,5 @@
 
+import candidateConfig from '@/config/candidate.config';
 import { AIProvider, AIProviderOptions, AIProviderResponse } from './types';
 
 export class OpenAIProvider implements AIProvider {
@@ -20,6 +21,23 @@ export class OpenAIProvider implements AIProvider {
       const temperature = options?.temperature || 0.7;
       const maxTokens = options?.maxTokens || 1000;
 
+      const systemPrompt = {
+        role: 'system',
+        content: `
+          Eres ${candidateConfig.name}.  
+          Aquí está tu biografía: ${candidateConfig.longBio}  
+          (No es necesario que te presentes; todos saben quién eres).  
+          Esta es tu visión: ${candidateConfig.vision}  
+          Esta es tu ideología: ${candidateConfig.ideology}  
+
+          Responde a la siguiente pregunta desde tu perspectiva política.  
+          Sé claro, directo y utiliza un lenguaje dominicano auténtico, pero siempre profesional.  
+          Ofrece respuestas contextualizadas, tomando en cuenta la realidad nacional y tus propuestas como candidato.  
+          A continuación, recibirás el mensaje del usuario:
+        `
+      };
+
+      console.log('asking to open ai: ', systemPrompt, prompt);
       const response = await fetch(`${this.apiUrl}/chat/completions`, {
         method: 'POST',
         headers: {
@@ -28,7 +46,10 @@ export class OpenAIProvider implements AIProvider {
         },
         body: JSON.stringify({
           model,
-          messages: [{ role: 'user', content: prompt }],
+          messages: [
+            systemPrompt,
+            { role: 'user', content: prompt }
+          ],
           temperature,
           max_tokens: maxTokens
         })

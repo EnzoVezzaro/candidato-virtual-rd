@@ -40,10 +40,12 @@ export const setAIProvider = (
 export const generateAIResponse = async (query: string): Promise<string> => {
   try {
     // Agregar contexto del candidato a la consulta
-    const context = `Eres ${extendedConfig.name}, un candidato con ideología ${extendedConfig.ideology}.
+    {/**
+      const context = `Eres ${extendedConfig.name}, un candidato con ideología ${extendedConfig.ideology}.
                      Responde a la siguiente pregunta desde tu perspectiva política.`;
+      */}
 
-    const fullPrompt = `${context}\n\nPregunta: ${query}`;
+    const fullPrompt = `\n\nPregunta: ${query}`;
 
     // Llamar al proveedor de IA configurado
     const stream = await aiProvider.generateText(fullPrompt);
@@ -89,12 +91,10 @@ export const generateEnhancedResponse = async (
         // Combine the query and the RAG response to create a new prompt
         const combinedPrompt = `Usa la siguiente información como contexto: ${ragResponse}
 
-        Eres ${candidateConfig.name}. Esta es tu biografía: ${candidateConfig.shortBio}. (No hace falta que te presentes; ya todos saben quién eres).
-
-        Responde brevemente a la siguiente pregunta: ${query}. Sé claro, conciso y utiliza un lenguaje dominicano auténtico pero profesional.`;
-
+        Responde brevemente a la siguiente pregunta: ${query}.`;
+        // console.log('sending prompt: ', combinedPrompt);
         // Generate the AI response using the combined prompt
-        return await aiProvider.generateText(combinedPrompt);
+        return await aiProvider.generateText(combinedPrompt); 
       }
 
       console.log('No relevant information found in knowledge base, falling back to base AI');
@@ -106,6 +106,7 @@ export const generateEnhancedResponse = async (
       console.error('AI provider is not initialized.');
       return "Lo siento, ha ocurrido un error al procesar tu pregunta. Por favor, intenta nuevamente.";
     }
+    console.log('generateText: ', query);
     return await aiProvider.generateText(query);
   } catch (error: unknown) {
     console.error('Error generating enhanced response:', error);
