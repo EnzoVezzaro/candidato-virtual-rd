@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRightIcon, MessageSquareIcon, FileTextIcon, UserIcon, MicIcon } from 'lucide-react';
 import candidateConfig from '@/config/candidate.config';
@@ -11,20 +12,38 @@ import ChatDialog from '@/components/Chat/ChatDialog'; // Import ChatDialog
 const Home = () => {
   // Get featured proposals (first 3)
   const featuredProposals = candidateConfig.proposals.slice(0, 3);
-  const [isChatDialogOpen_1, setIsChatDialogOpen_1] = useState(false);
-  const [isChatDialogOpen_2, setIsChatDialogOpen_2] = useState(false);
-  const [initialChatMessage, setInitialChatMessage] = useState('');
-  const handleOpenChat_1 = () => {
-    setIsChatDialogOpen_1(true);
+  const [isChatDialogOpen, setIsChatDialogOpen] = useState(false);
+  const [suggestedQuestions, setSuggestedQuestions] = useState(candidateConfig.questionSuggestions);
+  const [initialQuestion, setInitialQuestion] = useState('');
+  
+  const handleOpenChat = () => {
+    setInitialQuestion('');
+    setIsChatDialogOpen(true);
   };
 
-  const handleOpenChat_2 = () => {
-    setIsChatDialogOpen_2(true);
+  const handleSuggestion  = (question) => {
+    setInitialQuestion(question);
+    setIsChatDialogOpen(true);
   };
+
   useEffect(() => {
     // Scroll to the top of the page whenever the active category changes
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  // Split suggested questions into 3 rows
+  const splitQuestions = () => {
+    const numQuestions = suggestedQuestions.length;
+    const questionsPerRow = Math.ceil(numQuestions / 3);
+    
+    return [
+      suggestedQuestions.slice(0, questionsPerRow),
+      suggestedQuestions.slice(questionsPerRow, questionsPerRow * 2),
+      suggestedQuestions.slice(questionsPerRow * 2)
+    ];
+  };
+
+  const questionRows = splitQuestions();
   
   return (
     <Layout>
@@ -65,9 +84,8 @@ const Home = () => {
                 })
               }
               <div className="mt-6">
-                <ChatDialog showTrigger={false} open={isChatDialogOpen_1} onOpenChange={setIsChatDialogOpen_1} />
                 <Button 
-                  onClick={handleOpenChat_1}
+                  onClick={handleOpenChat}
                   className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
                   <MicIcon size={18} />
                   Habla con AI María
@@ -112,7 +130,7 @@ const Home = () => {
       </section>
 
       {/* Values section */}
-      <section className="py-12 mb-[150px] border-t border-gray-200 dark:border-gray-800">
+      <section className="py-12 mb-[50px] border-t border-gray-200 dark:border-gray-800">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">Mis valores</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -140,6 +158,95 @@ const Home = () => {
         </div>
 
       </section> 
+
+      <div className="pb-2">
+        <div className="flex flex-col gap-3">
+          {/* Row 1 - Left to Right */}
+          <div className="overflow-hidden relative">
+            <div className="flex gap-2 animate-scroll-left whitespace-nowrap pause-on-hover">
+              {questionRows[0].map((question, index) => (
+                <Badge
+                  key={`row1-${index}`}
+                  variant="secondary"
+                  style={{ cursor: 'pointer' }}
+                  className="cursor-pointer whitespace-nowrap rounded-full shrink-0"
+                  onClick={() => handleSuggestion(question)}
+                >
+                  {question}
+                </Badge>
+              ))}
+              {/* Duplicate badges for continuous scrolling */}
+              {questionRows[0].map((question, index) => (
+                <Badge
+                  key={`row1-dup-${index}`}
+                  variant="secondary"
+                  style={{ cursor: 'pointer' }}
+                  className="cursor-pointer whitespace-nowrap rounded-full shrink-0"
+                  onClick={() => handleSuggestion(question)}
+                >
+                  {question}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          
+          {/* Row 2 - Right to Left */}
+          <div className="overflow-hidden relative">
+            <div className="flex gap-2 animate-scroll-right whitespace-nowrap pause-on-hover">
+              {questionRows[1].map((question, index) => (
+                <Badge
+                  key={`row2-${index}`}
+                  variant="secondary"
+                  style={{ cursor: 'pointer' }}
+                  className="cursor-pointer whitespace-nowrap rounded-full shrink-0"
+                  onClick={() => handleSuggestion(question)}
+                >
+                  {question}
+                </Badge>
+              ))}
+              {/* Duplicate badges for continuous scrolling */}
+              {questionRows[1].map((question, index) => (
+                <Badge
+                  key={`row2-dup-${index}`}
+                  variant="secondary"
+                  style={{ cursor: 'pointer' }}
+                  className="cursor-pointer whitespace-nowrap rounded-full shrink-0"
+                  onClick={() => handleSuggestion(question)}
+                >
+                  {question}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          
+          {/* Row 3 - Left to Right */}
+          <div className="overflow-hidden relative">
+            <div className="flex gap-2 animate-scroll-left whitespace-nowrap pause-on-hover" style={{ animationDelay: '1s' }}>
+              {questionRows[2].map((question, index) => (
+                <Badge
+                  key={`row3-${index}`}
+                  variant="secondary"
+                  className="cursor-pointer whitespace-nowrap rounded-full shrink-0"
+                  onClick={() => handleSuggestion(question)}
+                >
+                  {question}
+                </Badge>
+              ))}
+              {/* Duplicate badges for continuous scrolling */}
+              {questionRows[2].map((question, index) => (
+                <Badge
+                  key={`row3-dup-${index}`}
+                  variant="secondary"
+                  className="cursor-pointer whitespace-nowrap rounded-full shrink-0"
+                  onClick={() => handleSuggestion(question)}
+                >
+                  {question}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* CTA section */}
       <section className="py-12 border-t border-gray-200 dark:border-gray-800">
@@ -176,9 +283,8 @@ const Home = () => {
               </p>
             </div>
             <div className="mt-6 absolute" style={{ zIndex: 9 }}>
-              <ChatDialog showTrigger={false} open={isChatDialogOpen_2} onOpenChange={setIsChatDialogOpen_2} />
               <Button 
-                onClick={handleOpenChat_2}
+                onClick={handleOpenChat}
                 className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
                 <MicIcon size={18} />
                 Habla con AI María
@@ -187,6 +293,39 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <ChatDialog 
+        showTrigger={false} 
+        open={isChatDialogOpen} 
+        onOpenChange={setIsChatDialogOpen} 
+        initialQuestion={initialQuestion}
+      />
+
+      {/* Add these styles to your global CSS or tailwind.config.js */}
+      <style jsx>{`
+        @keyframes scrollLeft {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        @keyframes scrollRight {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        
+        .animate-scroll-left {
+          display: inline-flex;
+          animation: scrollLeft 30s linear infinite;
+        }
+        
+        .animate-scroll-right {
+          display: inline-flex;
+          animation: scrollRight 30s linear infinite;
+        }
+        
+        .pause-on-hover:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </Layout>
   );
 };

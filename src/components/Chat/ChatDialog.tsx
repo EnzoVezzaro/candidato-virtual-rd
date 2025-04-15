@@ -51,7 +51,7 @@ const ChatDialog: React.FC<ChatDialogProps> = ({ initialQuestion, open, onOpenCh
       <DialogContent className="mt-4 sm:max-w-[425px] md:max-w-[600px] lg:max-w-[800px] h-[80vh] flex flex-col">
         <DialogHeader>
           <DialogTitle>
-            <span className="text-2xl font-bold text-navy-900">Chat con AI Ana Maria</span>
+            <span className="text-2xl font-bold text-navy-900">Habla con AI Ana Maria</span>
           </DialogTitle>
         </DialogHeader>
         <div className="flex-grow overflow-hidden pb-200">

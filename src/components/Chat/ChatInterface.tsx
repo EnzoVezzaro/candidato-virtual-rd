@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { X, Send, Mic, MicOff } from 'lucide-react';
@@ -29,9 +28,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
   const [isLoading, setIsLoading] = useState(false);
   const [initialQuestionProcessed, setInitialQuestionProcessed] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const { 
+  const {
     transcript,
-    voiceEnabled, 
+    voiceEnabled,
     isListening, 
     isSpeaking, 
     startListening, 
@@ -186,13 +185,16 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
       // and set it as the input text once recognition is complete
     }
   };
-
+  
   return (
     <div className="flex flex-col h-full bg-gray-100 rounded-lg relative overflow-hidden">
       {/* Header */}
-      <div className="p-6 pb-4">
-        <p className="text-lg text-navy-800 mt-1">Por favor, asegúrate de activar tu micrófono.</p>
-      </div>
+      {
+        candidateConfig.voiceEnabled &&
+        <div className="p-6 pb-4">
+          <p className="text-lg text-navy-800 mt-1">Por favor, asegúrate de activar tu micrófono.</p>
+        </div>
+      }
 
       {/* Chat area */}
       <div className="flex-grow px-6 pb-6 overflow-y-auto">
@@ -212,7 +214,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
 
       {/* Input area */}
       <div className="px-6 pb-6 relative z-10">
-        <div className={`flex items-end gap-2 bg-white rounded-lg p-2 shadow-sm px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700`} style={{ opacity: !input ? 0.5 : 1 }}>
+        <div className={`flex items-end gap-2 bg-white rounded-lg p-2 shadow-sm px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700`} style={{ opacity: !input && !isLoading ? 0.5 : 1 }}>
           <Textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}

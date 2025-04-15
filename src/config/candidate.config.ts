@@ -20,6 +20,7 @@ export type CandidateConfig = {
   shortBio: string;
   longBio: string;
   localDiscussions: LocalDiscussions[]
+  questionSuggestions: string[];
   socialMedia: SocialMedia[];
   ideology: Ideology;
   proposals: Proposal[];
@@ -162,6 +163,18 @@ const candidateConfig: CandidateConfig = {
       ]
     }
   ],
+  questionSuggestions: [
+    "¿Cómo beneficiará la reforma fiscal a los más vulnerables?",
+    "¿Qué hará para eliminar exenciones fiscales a grandes corporaciones?",
+    "¿Cómo garantizará el acceso universal a la salud en zonas rurales?",
+    "¿Cómo garantizará la sostenibilidad del sistema de salud?",
+    "¿Cómo combinará gratuidad y calidad en la educación pública?",
+    "¿Cómo reducirá desigualdades en el acceso a educación superior?",
+    "¿Cuáles son los desafíos de la transición energética?",
+    "¿Qué incentivos dará para usar energías limpias?",
+    "¿Cómo involucrará a las comunidades en la seguridad?",
+    "¿Qué reformas hará en el sistema judicial y policial?"
+  ],  
   education: [
     "Doctorado en Economía, Universidad Nacional, 2010",
     "Maestría en Políticas Públicas, Universidad Internacional, 2005",
