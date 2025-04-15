@@ -137,7 +137,7 @@ const Biography = () => {
                 {candidateConfig.values.map((value, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <MedalIcon size={18} className="text-candidate-secondary dark:text-candidate-accent mt-1" />
-                    <p>{value}</p>
+                    <p>{value.title}</p>
                   </div>
                 ))}
               </div>
