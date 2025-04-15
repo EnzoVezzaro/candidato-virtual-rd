@@ -76,7 +76,10 @@ const Home = () => {
               {
                 candidateConfig.localDiscussions.map((local, i)=> {
                   return (
-                    <div className="pl-4 border-l-4 border-primary my-4 italic" key={'local_'+i}>
+                    <div 
+                    onClick={() => handleSuggestion(local.comment)}
+                    style={{ cursor: 'pointer' }}
+                    className="pl-4 border-l-4 border-primary my-4 italic" key={'local_'+i}>
                       <p className="mb-2">{local.comment}</p>
                       <p className="text-sm text-gray-600">— {local.user}</p>
                     </div>
