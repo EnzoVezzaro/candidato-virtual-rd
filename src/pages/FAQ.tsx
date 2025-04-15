@@ -113,12 +113,10 @@ const FAQ = () => {
             <p className="text-gray-500 dark:text-gray-400 mb-4">
               No se encontraron preguntas que coincidan con tu búsqueda.
             </p>
-            <Link to="/chat">
-              <Button className="bg-candidate-secondary hover:bg-candidate-primary text-white">
-                <MessageSquareIcon size={18} className="mr-2" />
-                Hazme tu pregunta directamente
-              </Button>
-            </Link>
+            <Button className="bg-candidate-secondary hover:bg-candidate-primary text-white" onClick={handleOpenChat}>
+              <MessageSquareIcon size={18} className="mr-2" />
+              Hazme tu pregunta directamente
+            </Button>
           </div>
         )}
 
