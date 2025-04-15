@@ -85,7 +85,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
     try {
       // Generate response
       const response = await generateEnhancedResponse(userMessage.content);
-
+      
       if (typeof response === 'string') {
         // Handle non-streaming response (error message)
         const assistantMessage: MessageType = {
@@ -113,7 +113,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
 
           // Decode the Uint8Array to a string
           accumulatedResponse += textDecoder.decode(value);
-          console.log('accumulatedResponse :', accumulatedResponse);
           
           // Update the streaming message with the accumulated response
           setMessages(prev => {

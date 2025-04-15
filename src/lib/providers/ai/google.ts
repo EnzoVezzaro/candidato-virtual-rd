@@ -70,9 +70,9 @@ export class GoogleProvider implements AIProvider {
                 if (line.startsWith('data:')) {
                   try {
                     const jsonData = JSON.parse(line.substring(5).trim());
-                    console.log('jsonData:', jsonData);
+                    // console.log('jsonData:', jsonData);
                     const text = jsonData?.candidates?.[0]?.content?.parts?.[0]?.text;
-                    console.log('Extracted text:', text);
+                    // console.log('Extracted text:', text);
                     if (text) {
                       // Convert the text to a Uint8Array
                       const encoder = new TextEncoder();

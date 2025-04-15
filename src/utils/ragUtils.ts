@@ -59,7 +59,6 @@ export const loadDocuments = async (): Promise<Document[]> => {
       }
     }
     console.log('docs: ', documents);
-    
     documentStore.push(...documents);
     return documents;
   } catch (error) {
