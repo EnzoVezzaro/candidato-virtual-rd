@@ -163,7 +163,7 @@ export const generateRAGResponse = async (query: string): Promise<string> => {
   // En una implementación real, enviaríamos este contexto a un LLM
   // junto con la consulta para obtener una respuesta coherente
   // Por ahora, simplemente devolveremos el documento más relevante
-  return relevantDocs[0].content;
+  return context;
 };
 
 // Inicializar la base de conocimiento

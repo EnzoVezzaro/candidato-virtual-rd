@@ -1,4 +1,5 @@
 
+import candidateConfig from '@/config/candidate.config';
 import { generateRAGResponse, initializeKnowledgeBase } from './ragUtils';
 import { extendedConfig } from '@/config/extendedConfig';
 import { aiProviderFactory } from '@/lib/providers/ai/factory';
@@ -83,13 +84,13 @@ export const generateEnhancedResponse = async (
       console.log('Using RAG to generate response...');
 
       // Obtener respuesta de la base de conocimiento
-      const ragResponse = await generateRAGResponse(query);
+      const ragResponse = await generateRAGResponse(query); 
       
       // Si tenemos una respuesta de RAG, la usamos
       if (ragResponse && ragResponse !== "Lo siento, no tengo información específica sobre esa consulta. ¿Puedo ayudarte con algo más?") {
         console.log('Found relevant information in knowledge base: ', ragResponse);
         // Combine the query and the RAG response to create a new prompt
-        const combinedPrompt = `Basado en la siguiente información: ${ragResponse}\n\nResponde a la pregunta como el candidato que eres: ${query}`;
+        const combinedPrompt = `Basado en la siguiente información: ${ragResponse}\n\nEres ${candidateConfig.name}, este es tu bio ${candidateConfig.shortBio}(no te presentes. todos saben quien eres)\n\nResponde a la pregunta: ${query}`;
         // Generate the AI response using the combined prompt
         return await aiProvider.generateText(combinedPrompt);
       }

@@ -35,7 +35,7 @@ const Home = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               {/* Replace Link with ChatDialog */}
-              <ChatDialog /> 
+              <ChatDialog showTrigger={true} /> 
               <Link to="/propuestas">
                 <Button variant="outline">
                   <FileTextIcon size={18} className="mr-2" />
