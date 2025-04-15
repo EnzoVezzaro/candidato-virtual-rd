@@ -44,5 +44,14 @@ Para más detalles, consulta el archivo: [Reforma Integral de Seguridad](./asset
 
 ---
 
+## 6. Política de Inmigración Justa y Humana
+
+Ana María Rodríguez propone una política migratoria que priorice la integración, el respeto a los derechos humanos y la contribución de los inmigrantes a nuestra sociedad.
+
+Para más detalles, consulta el archivo: [Política de Inmigración Justa y Humana](./assets/propuestas/politica_inmigracion_justa_y_humana.pdf)
+
+---
+
 Estas propuestas representan el compromiso de Ana María Rodríguez con el progreso y bienestar de todos los dominicanos. Para más detalles sobre cada propuesta, consulta los archivos correspondientes.
 
+---

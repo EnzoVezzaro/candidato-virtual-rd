@@ -161,6 +161,18 @@ const candidateConfig: CandidateConfig = {
           url: "/assets/propuestas/reforma_integral_de_seguridad.pdf"
         }
       ]
+    },
+    {
+      id: "prop-immigration-1",
+      title: "Política de Inmigración Justa y Humana",
+      description: "Implementación de una política migratoria que priorice la integración, el respeto a los derechos humanos y la contribución de los inmigrantes a nuestra sociedad.",
+      category: "immigration",
+      resources: [
+        {
+          title: "Política de Inmigración Justa y Humana",
+          url: "/assets/propuestas/politica_inmigracion_justa_y_humana.pdf"
+        }
+      ]
     }
   ],
   questionSuggestions: [
