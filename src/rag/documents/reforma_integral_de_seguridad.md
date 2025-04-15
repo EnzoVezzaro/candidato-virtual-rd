@@ -12,4 +12,4 @@ Ana María Rodríguez propone una **reforma integral de seguridad** para garanti
 
 Con esta reforma, se busca una seguridad que no solo actúe como represiva, sino como un mecanismo preventivo y restaurador que propicie una sociedad más armónica y segura.
 
-📄 [Descargar propuesta en PDF](./public/assets/reforma_integral_de_seguridad.pdf)
+📄 [Descargar propuesta en PDF](./assets/propuestas/reforma_integral_de_seguridad.pdf)
