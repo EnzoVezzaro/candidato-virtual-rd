@@ -92,7 +92,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-6 text-center text-gray-500 dark:text-gray-400 text-sm">
           <p>© {new Date().getFullYear()} {candidateConfig.name}. Todos los derechos reservados.</p>
-          <p className="mt-1">Esta aplicación fue generada con Candidato Inteligente.</p>
+          <p className="mt-1">Esta plataforma ha sido creada por Candidato Inteligente.</p>
         </div>
       </div>
     </footer>
