@@ -1,73 +1,66 @@
-# Welcome to your Lovable project
+# Candidato Virtual
 
-## Project info
+## Project Description
 
-**URL**: https://lovable.dev/projects/4ccde690-c4ad-4a22-8a21-79f8d3db2664
+Candidato Virtual is a web application built with React, TypeScript, and Vite. It serves as a virtual representation of a political candidate, providing information about their biography, proposals, and frequently asked questions. The application also includes a chat interface powered by a Retrieval-Augmented Generation (RAG) system, allowing users to interact with the candidate and ask questions about their platform.
 
-## How can I edit this code?
+## Technologies Used
 
-There are several ways of editing your application.
+*   **React:** A JavaScript library for building user interfaces.
+*   **TypeScript:** A superset of JavaScript that adds static typing.
+*   **Vite:** A build tool that provides a fast and efficient development experience.
+*   **Tailwind CSS:** A utility-first CSS framework for rapidly styling custom designs.
+*   **Radix UI:** A set of unstyled, accessible UI primitives.
+*   **RAG (Retrieval-Augmented Generation):** An AI framework for enhancing the accuracy and reliability of generative models by grounding them on external knowledge sources.
 
-**Use Lovable**
+## Project Structure
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4ccde690-c4ad-4a22-8a21-79f8d3db2664) and start prompting.
+The project is structured as follows:
 
-Changes made via Lovable will be committed automatically to this repo.
+*   `public/`: Contains static assets such as images, fonts, and the `robots.txt` file.
+*   `src/`: Contains the application's source code.
+    *   `components/`: Contains reusable UI components.
+        *   `Chat/`: Contains components related to the chat interface.
+        *   `ui/`: Contains UI components built with Radix UI and Tailwind CSS.
+    *   `config/`: Contains configuration files.
+    *   `data/`: Contains data files, such as the knowledge base for the RAG system.
+    *   `hooks/`: Contains custom React hooks.
+    *   `lib/`: Contains utility functions and providers.
+        *   `providers/ai/`: Contains AI provider implementations (e.g., OpenAI, Google).
+    *   `pages/`: Contains the application's pages.
+    *   `rag/`: Contains files related to the RAG system.
+        *   `documents/`: Contains the documents used for the RAG system.
+    *   `store/`: Contains the application's state management logic (if any).
+    *   `utils/`: Contains utility functions.
+*   `index.html`: The main HTML file.
+*   `vite.config.ts`: The Vite configuration file.
+*   `tailwind.config.ts`: The Tailwind CSS configuration file.
+*   `tsconfig.json`: The TypeScript configuration file.
+*   `package.json`: The project's package file, containing dependencies and scripts.
 
-**Use your preferred IDE**
+## Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1.  Clone the repository:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+    ```bash
+    git clone <repository_url>
+    ```
+2.  Navigate to the project directory:
 
-Follow these steps:
+    ```bash
+    cd candidato-virtual-rd
+    ```
+3.  Install the dependencies:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+    ```bash
+    npm install
+    ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Usage
 
-# Step 3: Install the necessary dependencies.
-npm i
+1.  Start the development server:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/4ccde690-c4ad-4a22-8a21-79f8d3db2664) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+    ```bash
+    npm run dev
+    ```
+2.  Open your browser and navigate to `http://localhost:5173` (or the port specified by Vite).
