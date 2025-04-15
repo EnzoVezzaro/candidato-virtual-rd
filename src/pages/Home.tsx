@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -16,6 +16,10 @@ const Home = () => {
   const handleOpenChat = () => {
     setIsChatDialogOpen(true);
   };
+  useEffect(() => {
+    // Scroll to the top of the page whenever the active category changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   
   return (
     <Layout>

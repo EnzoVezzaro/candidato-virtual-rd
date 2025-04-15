@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import ProposalCard from '@/components/ProposalCard';
 import candidateConfig, { Category } from '@/config/candidate.config';
 import { Button } from '@/components/ui/button';
+import { useEffect } from 'react';
 
 type CategoryFilter = Category | 'all';
 
@@ -22,6 +23,10 @@ const categoryLabels: Record<CategoryFilter, string> = {
 
 const Proposals = () => {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('all');
+  useEffect(() => {
+    // Scroll to the top of the page whenever the active category changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   // Get all categories from proposals
   const categories = Array.from(

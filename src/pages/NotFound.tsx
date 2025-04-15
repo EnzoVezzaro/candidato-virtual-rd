@@ -1,11 +1,15 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { HomeIcon } from 'lucide-react';
 
 const NotFound = () => {
+  useEffect(() => {
+      // Scroll to the top of the page whenever the active category changes
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
   return (
     <Layout>
       <div className="min-h-[70vh] flex flex-col items-center justify-center text-center">

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '@/components/Layout';
 import candidateConfig from '@/config/candidate.config';
 import { Link } from 'react-router-dom';
@@ -15,6 +15,11 @@ const Biography = () => {
   const handleOpenChat = () => {
     setIsChatDialogOpen(true);
   };
+
+  useEffect(() => {
+    // Scroll to the top of the page whenever the active category changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   const ideologyLabel = () => {
     switch (candidateConfig.ideology) {

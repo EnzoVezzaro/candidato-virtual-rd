@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
@@ -25,6 +25,10 @@ const categoryLabels: Record<Category, string> = {
 const FAQ = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<Category | 'all'>('all');
+  useEffect(() => {
+    // Scroll to the top of the page whenever the active category changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   const [isChatDialogOpen, setIsChatDialogOpen] = useState(false);
   const handleOpenChat = () => {
