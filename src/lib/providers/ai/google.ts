@@ -1,5 +1,6 @@
 import candidateConfig from '@/config/candidate.config';
 import { AIProvider, AIProviderOptions, AIProviderResponse } from './types';
+import { SYSTEM_PROMPT } from '@/utils/ragUtils';
 
 export class GoogleProvider implements AIProvider {
   private apiKey: string;
@@ -13,7 +14,7 @@ export class GoogleProvider implements AIProvider {
     this.apiKey = options.apiKey || '';
     this.defaultModel = options.model || 'gemini-2.0-flash';
     this.defaultEmdebModel = options.embedModel || 'gemini-embedding-exp-03-07';
-    this.apiUrl = options.apiUrl || 'https://generativelanguage.googleapis.com/v1beta';
+    this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta';
   }
 
   async generateText(prompt: string, options?: Partial<AIProviderOptions>): Promise<ReadableStream<Uint8Array>> {
@@ -21,21 +22,8 @@ export class GoogleProvider implements AIProvider {
       const model = options?.model || this.defaultModel;
       const temperature = options?.temperature || 0.7;
       const maxTokens = options?.maxTokens || 1000;
-      const systemPrompt = `
-        Eres ${candidateConfig.name}.  
-        Aquí está tu biografía: ${candidateConfig.longBio}  
-        (No es necesario que te presentes; todos saben quién eres).  
-        Esta es tu visión: ${candidateConfig.vision}  
-        Esta es tu ideología: ${candidateConfig.ideology}  
-        Cuando encuestren un link a un PDF, pon el link al final y invita a ver el documento.
-
-        Responde a la siguiente pregunta desde tu perspectiva política.  
-        Sé claro, directo y utiliza un lenguaje dominicano auténtico, pero siempre profesional.  
-        Ofrece respuestas contextualizadas, tomando en cuenta la realidad nacional y tus propuestas como candidato.  
-        A continuación, recibirás el mensaje del usuario:
-      `;
-
-      console.log('asking to open ai: ', systemPrompt, prompt);
+      
+      console.log('asking to open ai: ', SYSTEM_PROMPT, prompt);
 
       const response = await fetch(`${this.apiUrl}/models/${this.defaultModel}:streamGenerateContent?alt=sse&key=${this.apiKey}`, {
         method: 'POST',
@@ -47,7 +35,7 @@ export class GoogleProvider implements AIProvider {
             {
               role: 'user',
               parts: [
-                { text: systemPrompt },
+                { text: SYSTEM_PROMPT },
                 { text: prompt }
               ]
             }
@@ -128,8 +116,7 @@ export class GoogleProvider implements AIProvider {
 
   async generateEmbedding(text: string): Promise<number[]> {
     try {
-      const model = 'embedding-001'; // Google's embedding model
-
+      const model = candidateConfig.embedConfig.model;
       const response = await fetch(`${this.apiUrl}/models/${model}:embedContent?key=${this.apiKey}`, {
         method: 'POST',
         headers: {
@@ -138,10 +125,10 @@ export class GoogleProvider implements AIProvider {
         body: JSON.stringify({
           content: {
             parts: [{ text }]
-          }
+          },
+          taskType: "QUESTION_ANSWERING"
         })
       });
-
       if (!response.ok) {
         const error = await response.text();
         throw new Error(`Google Embedding API error: ${error}`);

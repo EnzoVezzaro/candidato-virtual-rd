@@ -11,7 +11,7 @@ export class GroqProvider implements AIProvider {
   constructor(options: AIProviderOptions) {
     this.apiKey = options.apiKey || '';
     this.defaultModel = options.model || 'llama3-8b-8192';
-    this.apiUrl = options.apiUrl || 'https://api.groq.com/openai/v1';
+    this.apiUrl = 'https://api.groq.com/openai/v1';
   }
 
   async generateText(prompt: string, options?: Partial<AIProviderOptions>): Promise<AIProviderResponse> {

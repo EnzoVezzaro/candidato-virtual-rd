@@ -54,7 +54,6 @@ export interface AIProviderOptions {
   model: string;
   embedModel: string;
   apiKey?: string;
-  apiUrl?: string;
   temperature?: number;
   maxTokens?: number;
 }

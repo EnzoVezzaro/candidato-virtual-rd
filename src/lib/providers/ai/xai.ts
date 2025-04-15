@@ -11,7 +11,7 @@ export class XAIProvider implements AIProvider {
   constructor(options: AIProviderOptions) {
     this.apiKey = options.apiKey || '';
     this.defaultModel = options.model || 'grok-1';
-    this.apiUrl = options.apiUrl || 'https://api.xai.com/v1';
+    this.apiUrl = 'https://api.xai.com/v1';
   }
 
   async generateText(prompt: string, options?: Partial<AIProviderOptions>): Promise<AIProviderResponse> {

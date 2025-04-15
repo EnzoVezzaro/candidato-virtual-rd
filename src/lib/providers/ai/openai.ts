@@ -1,6 +1,7 @@
 
 import candidateConfig from '@/config/candidate.config';
 import { AIProvider, AIProviderOptions, AIProviderResponse } from './types';
+import { SYSTEM_PROMPT } from '@/utils/ragUtils';
 
 export class OpenAIProvider implements AIProvider {
   private apiKey: string;
@@ -12,7 +13,7 @@ export class OpenAIProvider implements AIProvider {
   constructor(options: AIProviderOptions) {
     this.apiKey = options.apiKey || '';
     this.defaultModel = options.model || 'gpt-4o';
-    this.apiUrl = options.apiUrl || 'https://api.openai.com/v1';
+    this.apiUrl = 'https://api.openai.com/v1';
   }
 
   async generateText(prompt: string, options?: Partial<AIProviderOptions>): Promise<AIProviderResponse> {
@@ -21,23 +22,6 @@ export class OpenAIProvider implements AIProvider {
       const temperature = options?.temperature || 0.7;
       const maxTokens = options?.maxTokens || 1000;
 
-      const systemPrompt = {
-        role: 'system',
-        content: `
-          Eres ${candidateConfig.name}.  
-          Aquí está tu biografía: ${candidateConfig.longBio}  
-          (No es necesario que te presentes; todos saben quién eres).  
-          Esta es tu visión: ${candidateConfig.vision}  
-          Esta es tu ideología: ${candidateConfig.ideology}  
-
-          Responde a la siguiente pregunta desde tu perspectiva política.  
-          Sé claro, directo y utiliza un lenguaje dominicano auténtico, pero siempre profesional.  
-          Ofrece respuestas contextualizadas, tomando en cuenta la realidad nacional y tus propuestas como candidato.  
-          A continuación, recibirás el mensaje del usuario:
-        `
-      };
-
-      console.log('asking to open ai: ', systemPrompt, prompt);
       const response = await fetch(`${this.apiUrl}/chat/completions`, {
         method: 'POST',
         headers: {
@@ -47,7 +31,10 @@ export class OpenAIProvider implements AIProvider {
         body: JSON.stringify({
           model,
           messages: [
-            systemPrompt,
+            {
+              role: 'system',
+              content: SYSTEM_PROMPT
+            },
             { role: 'user', content: prompt }
           ],
           temperature,
@@ -89,7 +76,7 @@ export class OpenAIProvider implements AIProvider {
           input: text
         })
       });
-
+      console.log('generateEmbedding aqui: ', response);
       if (!response.ok) {
         const error = await response.text();
         throw new Error(`OpenAI Embedding API error: ${error}`);

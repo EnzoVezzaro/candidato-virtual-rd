@@ -12,4 +12,4 @@ Una de las principales apuestas de Ana María Rodríguez es garantizar **educaci
 
 Con esta propuesta, Ana María Rodríguez busca transformar la educación en un pilar fundamental para el progreso de la República Dominicana.
 
-📄 [Descargar propuesta en PDF](./public/assets/propuestas/educacion_gratuita_y_de_calidad.pdf)
+📄 [Descargar propuesta en PDF](./assets/propuestas/educacion_gratuita_y_de_calidad.pdf) 

@@ -11,10 +11,15 @@ import ChatDialog from '@/components/Chat/ChatDialog'; // Import ChatDialog
 const Home = () => {
   // Get featured proposals (first 3)
   const featuredProposals = candidateConfig.proposals.slice(0, 3);
-  const [isChatDialogOpen, setIsChatDialogOpen] = useState(false);
+  const [isChatDialogOpen_1, setIsChatDialogOpen_1] = useState(false);
+  const [isChatDialogOpen_2, setIsChatDialogOpen_2] = useState(false);
   const [initialChatMessage, setInitialChatMessage] = useState('');
-  const handleOpenChat = () => {
-    setIsChatDialogOpen(true);
+  const handleOpenChat_1 = () => {
+    setIsChatDialogOpen_1(true);
+  };
+
+  const handleOpenChat_2 = () => {
+    setIsChatDialogOpen_2(true);
   };
   useEffect(() => {
     // Scroll to the top of the page whenever the active category changes
@@ -50,9 +55,9 @@ const Home = () => {
                 Temas locales que te importan, como por ejemplo:
               </p>
               {
-                candidateConfig.localDiscussions.map((local)=> {
+                candidateConfig.localDiscussions.map((local, i)=> {
                   return (
-                    <div className="pl-4 border-l-4 border-primary my-4 italic">
+                    <div className="pl-4 border-l-4 border-primary my-4 italic" key={'local_'+i}>
                       <p className="mb-2">{local.comment}</p>
                       <p className="text-sm text-gray-600">— {local.user}</p>
                     </div>
@@ -60,9 +65,9 @@ const Home = () => {
                 })
               }
               <div className="mt-6">
-                <ChatDialog showTrigger={false} open={isChatDialogOpen} onOpenChange={setIsChatDialogOpen} />
+                <ChatDialog showTrigger={false} open={isChatDialogOpen_1} onOpenChange={setIsChatDialogOpen_1} />
                 <Button 
-                  onClick={handleOpenChat}
+                  onClick={handleOpenChat_1}
                   className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
                   <MicIcon size={18} />
                   Habla con AI María
@@ -171,9 +176,9 @@ const Home = () => {
               </p>
             </div>
             <div className="mt-6 absolute" style={{ zIndex: 9 }}>
-              <ChatDialog showTrigger={false} open={isChatDialogOpen} onOpenChange={setIsChatDialogOpen} />
+              <ChatDialog showTrigger={false} open={isChatDialogOpen_2} onOpenChange={setIsChatDialogOpen_2} />
               <Button 
-                onClick={handleOpenChat}
+                onClick={handleOpenChat_2}
                 className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
                 <MicIcon size={18} />
                 Habla con AI María

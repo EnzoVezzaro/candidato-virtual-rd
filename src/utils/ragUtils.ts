@@ -1,4 +1,5 @@
 
+import candidateConfig from '@/config/candidate.config';
 import { generateEmbedding } from './enhancedAiUtils';
 
 // Tipos para el sistema RAG
@@ -16,11 +17,44 @@ export type Document = {
 // Simulación de base de datos en memoria para documentos
 export const documentStore: Document[] = [];
 
+export const SYSTEM_PROMPT = `
+    Eres ${candidateConfig.name}.  
+    Aquí está tu biografía: ${candidateConfig.longBio}  
+    (No es necesario que te presentes; todos saben quién eres).  
+    Esta es tu visión: ${candidateConfig.vision}  
+    Esta es tu ideología: ${candidateConfig.ideology}  
+    Si encuentras un link a un PDF, pon el link al final de la conversacion (IMPORTANTE, abre nueva pestaña al click - usa un anchor asi >> <a target='_blank' href=<LINK> al link). Invita a ver el documento (pero solo si encuentras un link).
+
+    Responde a la siguiente pregunta desde tu perspectiva política.  
+    Hazlo con amabilidad y de manera cercana, como si estuvieras conversando directamente con un constituyente.
+    Sé claro, directo pero siempre profesional.  
+    Ofrece respuestas contextualizadas, tomando en cuenta la realidad nacional y tus propuestas como candidato.  
+    A continuación, recibirás el mensaje del usuario:
+  `
+
+const LOCAL_STORAGE_KEY = 'cached_documents_v1';
 // Función para cargar documentos (en producción, esto cargaría desde archivos)
 export const loadDocuments = async (): Promise<Document[]> => {
   try {
-    // Use import.meta.glob to load documents
-    const documentFiles = import.meta.glob('../rag/documents/*.md', { query: '?raw', import: 'default' });
+    const documentFiles = import.meta.glob('../rag/documents/*.md', {
+      query: '?raw',
+      import: 'default',
+    });
+
+    const filePaths = Object.keys(documentFiles);
+
+    // Verificar si hay cache y si la cantidad de documentos coincide
+    const cached = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (cached) {
+      const parsed = JSON.parse(cached) as Document[];
+      if (parsed.length === filePaths.length) {
+        console.log('Loaded documents from localStorage');
+        documentStore.push(...parsed);
+        return parsed;
+      } else {
+        console.log('Document count changed, bypassing localStorage cache');
+      }
+    }
     
     const documents: Document[] = [];
     for (const filePath in documentFiles) {
@@ -53,12 +87,16 @@ export const loadDocuments = async (): Promise<Document[]> => {
       try {
         // Generar embedding para el documento si es posible
         doc.embedding = await generateEmbedding(doc.content);
+        
       } catch (error) {
         console.warn(`No se pudo generar embedding para ${doc.id}:`, error);
         // Continuar sin embedding
       }
     }
-    console.log('docs: ', documents);
+
+    // Guardar en localStorage
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(documents));
+    console.log('Docs loaded and cached to localStorage: ', documents);
     documentStore.push(...documents);
     return documents;
   } catch (error) {
@@ -125,7 +163,7 @@ export const searchDocuments = async (query: string): Promise<Document[]> => {
         // Ordenar por similitud (mayor a menor)
         return scoredDocs
           .sort((a, b) => b.score - a.score)
-          .filter(item => item.score > 0.7) // Umbral de similitud
+          .filter(item => item.score > 0.55) // Umbral de similitud
           .map(item => item.doc);
       }
     }

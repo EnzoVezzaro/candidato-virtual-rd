@@ -11,7 +11,7 @@ export class AnthropicProvider implements AIProvider {
   constructor(options: AIProviderOptions) {
     this.apiKey = options.apiKey || '';
     this.defaultModel = options.model || 'claude-3-opus-20240229';
-    this.apiUrl = options.apiUrl || 'https://api.anthropic.com/v1';
+    this.apiUrl = 'https://api.anthropic.com/v1';
   }
 
   async generateText(prompt: string, options?: Partial<AIProviderOptions>): Promise<AIProviderResponse> {

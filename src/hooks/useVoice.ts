@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import candidateConfig from '@/config/candidate.config';
-import extendedConfig from '@/config/extendedConfig';
 import { experimental_generateSpeech as generateSpeech } from 'ai';
 import { createHume, hume } from '@ai-sdk/hume';
 import { createLMNT, lmnt } from '@ai-sdk/lmnt';

@@ -6,10 +6,8 @@ import { GroqProvider } from './groq';
 import { XAIProvider } from './xai';
 import { OpenRouterProvider } from './openrouter';
 import { AIProvider, AIProviderOptions } from './types';
-import { AIProvider as AIProviderType } from '@/config/extendedConfig';
-
 class AIProviderFactory {
-  createProvider(provider: AIProviderType, options: AIProviderOptions): AIProvider {
+  createProvider(provider: string | AIProvider, options: AIProviderOptions): AIProvider {
     switch (provider) {
       case 'openai':
         return new OpenAIProvider(options);

@@ -11,7 +11,7 @@ export class OpenRouterProvider implements AIProvider {
   constructor(options: AIProviderOptions) {
     this.apiKey = options.apiKey || '';
     this.defaultModel = options.model || 'openai/gpt-4o';
-    this.apiUrl = options.apiUrl || 'https://openrouter.ai/api/v1';
+    this.apiUrl = 'https://openrouter.ai/api/v1';
   }
 
   async generateText(prompt: string, options?: Partial<AIProviderOptions>): Promise<AIProviderResponse> {

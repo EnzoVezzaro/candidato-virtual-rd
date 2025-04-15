@@ -4,7 +4,6 @@ import {
   Proposal,
   SocialMedia,
   VoiceProvider,
-  AIModel,
   RAGProvider,
   AIProvider,
   LocalDiscussions
@@ -110,7 +109,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Reforma Fiscal Progresiva",
-          url: "/public/assets/propuestas/reforma_fiscal_progresiva.pdf"
+          url: "//assets/propuestas/reforma_fiscal_progresiva.pdf"
         }
       ]
     },
@@ -122,7 +121,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Salud Universal Accesible",
-          url: "/public/assets/propuestas/salud_universal_accesible.pdf"
+          url: "//assets/propuestas/salud_universal_accesible.pdf"
         }
       ]
     },
@@ -134,7 +133,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Educacion Gratuita y de Calidad",
-          url: "/public/assets/propuestas/educacion_gratuita_y_de_calidad.pdf"
+          url: "//assets/propuestas/educacion_gratuita_y_de_calidad.pdf"
         }
       ]
     },
@@ -146,7 +145,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Transición Energética Verde",
-          url: "/public/assets/propuestas/transición_energética_verde.pdf"
+          url: "//assets/propuestas/transición_energética_verde.pdf"
         }
       ]
     },
@@ -158,7 +157,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Reforma Integral de Seguridad",
-          url: "/public/assets/propuestas/reforma_integral_de_seguridad.pdf"
+          url: "//assets/propuestas/reforma_integral_de_seguridad.pdf"
         }
       ]
     }
@@ -225,7 +224,7 @@ const candidateConfig: CandidateConfig = {
     apiKey: import.meta.env.VITE_PUBLIC_GOOGLE_API_KEY,
   },
   embedConfig: {
-    model: 'gemini-embedding-exp-03-07',
+    model: 'text-embedding-004',
     apiKey: import.meta.env.VITE_PUBLIC_GOOGLE_API_KEY,
   },
   ragConfig: {
@@ -233,7 +232,7 @@ const candidateConfig: CandidateConfig = {
   },
   primaryColor: "#1A365D",
   secondaryColor: "#7E3AF2",
-  accentColor: "#F7B733"
+  accentColor: "#F7B733",
 };
 
 export default candidateConfig;
