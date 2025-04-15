@@ -38,7 +38,7 @@ export type CandidateConfig = {
     };
   };
   aiConfig: {
-    provider: AIProvider;
+    provider: AIProvider | string;
     model: string;
     apiKey: string;
   };

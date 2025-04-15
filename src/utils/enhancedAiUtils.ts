@@ -20,12 +20,12 @@ let aiProvider = aiProviderFactory.createProvider(
 
 // Función para cambiar el proveedor de IA en tiempo de ejecución
 export const setAIProvider = (
-  provider: string, 
+  provider: string,
   options: AIProviderOptions
 ) => {
   try {
     aiProvider = aiProviderFactory.createProvider(
-      provider as any, 
+      provider,
       options
     );
     return true;
@@ -39,7 +39,7 @@ export const setAIProvider = (
 export const generateAIResponse = async (query: string): Promise<string> => {
   try {
     // Agregar contexto del candidato a la consulta
-    const context = `Eres ${extendedConfig.name}, un candidato con ideología ${extendedConfig.ideology}. 
+    const context = `Eres ${extendedConfig.name}, un candidato con ideología ${extendedConfig.ideology}.
                      Responde a la siguiente pregunta desde tu perspectiva política.`;
 
     const fullPrompt = `${context}\n\nPregunta: ${query}`;
@@ -76,7 +76,7 @@ export const generateAIResponse = async (query: string): Promise<string> => {
 export const generateEnhancedResponse = async (
   query: string,
   useRAG: boolean = true
-): Promise<ReadableStream<Uint8Array> | string> => {
+): Promise<ReadableStream<Uint8Array> | string | null> => {
   try {
     // Si RAG está habilitado, usar la base de conocimiento
     if (useRAG) {
@@ -99,6 +99,10 @@ export const generateEnhancedResponse = async (
 
     // Si RAG no está habilitado o no encontró información relevante,
     // usar el sistema base de generación de respuestas
+    if (!aiProvider) {
+      console.error('AI provider is not initialized.');
+      return "Lo siento, ha ocurrido un error al procesar tu pregunta. Por favor, intenta nuevamente.";
+    }
     return await aiProvider.generateText(query);
   } catch (error: unknown) {
     console.error('Error generating enhanced response:', error);

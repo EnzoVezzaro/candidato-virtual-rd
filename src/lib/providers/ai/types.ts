@@ -30,14 +30,20 @@ export type AIModel = 'gpt4o' | 'gpt4o-mini' | 'gpt4-turbo' | 'gpt3.5-turbo' | '
 
 export type RAGProvider = 'supabase' | 'pinecone' | 'weaviate' | 'local';
 
-export type AIProvider = 
-  | 'openai' 
-  | 'anthropic' 
-  | 'google' 
-  | 'groq'
-  | 'xai'
-  | 'openrouter'
-  | 'local';
+import { OpenAIProvider } from './openai';
+import { AnthropicProvider } from './anthropic';
+import { GoogleProvider } from './google';
+import { GroqProvider } from './groq';
+import { XAIProvider } from './xai';
+import { OpenRouterProvider } from './openrouter';
+
+export type AIProvider =
+  | OpenAIProvider
+  | AnthropicProvider
+  | GoogleProvider
+  | GroqProvider
+  | XAIProvider
+  | OpenRouterProvider;
 
 export interface AIProviderOptions {
   model: string;

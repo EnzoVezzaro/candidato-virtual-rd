@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useCallback, useRef } from 'react';
 import candidateConfig from '@/config/candidate.config';
 import extendedConfig from '@/config/extendedConfig';
@@ -38,7 +37,7 @@ const useVoice = () => {
       // Cleanup speech recognition if needed
       stopSpeaking(); // Stop any ongoing speech on unmount or when voice is disabled
     };
-  }, [voiceEnabled]); // Add stopSpeaking to dependencies if it changes, but it's stable via useCallback
+  }, [voiceEnabled]); // We'll handle the dependencies properly below
   
   // Start listening for voice input
   const startListening = useCallback(() => {
@@ -72,6 +71,78 @@ const useVoice = () => {
       audioRef.current = null;
       setState(prev => ({ ...prev, isSpeaking: false }));
       console.log('Speech stopped.');
+    }
+  }, []);
+
+  // Move this outside the speak callback to comply with React Hook rules
+  const browserFallbackSpeech = useCallback((fallbackText: string) => {
+    console.log("Using browser speech synthesis fallback");
+    
+    // Check if speech synthesis is available
+    if (!window.speechSynthesis) {
+      console.error("Speech synthesis not available in this browser");
+      setState(prev => ({
+        ...prev,
+        isSpeaking: false,
+        error: "Síntesis de voz no disponible en este navegador"
+      }));
+      return;
+    }
+    
+    try {
+      // Sanitize fallbackText to remove markdown
+      const sanitizedText = fallbackText.replace(/[*_~`>#+-]/g, '');
+
+      // Create and configure utterance
+      const utterance = new SpeechSynthesisUtterance(sanitizedText);
+      utterance.lang = 'es-ES';
+      utterance.volume = 1.0; // Maximum volume
+      
+      // Get available voices (optional but helpful)
+      const voices = window.speechSynthesis.getVoices();
+      console.log("Available voices:", voices);
+      // Try to find a Spanish voice
+      const spanishVoice = voices.find(voice => voice.lang.includes('es') && voice.voiceURI === "Shelley (Spanish (Mexico))");
+      if (spanishVoice) {
+        console.log("Using Spanish voice:", spanishVoice.name);
+        utterance.voice = spanishVoice;
+      }
+      
+      // Event handlers
+      utterance.onstart = () => console.log("Browser speech started");
+      utterance.onend = () => {
+        console.log("Browser speech ended");
+        setState(prev => ({ ...prev, isSpeaking: false }));
+      };
+      utterance.onerror = (event) => {
+        console.error("Browser speech synthesis error:", event);
+        setState(prev => ({
+          ...prev,
+          isSpeaking: false,
+          error: `Error en la síntesis de voz: ${event.error}`
+        }));
+      };
+      
+      // Sometimes voices aren't loaded immediately
+      if (speechSynthesis.getVoices().length === 0) {
+        speechSynthesis.onvoiceschanged = () => {
+          const updatedVoices = speechSynthesis.getVoices();
+          const updatedSpanishVoice = updatedVoices.find(voice => voice.lang.includes('es'));
+          if (updatedSpanishVoice) utterance.voice = updatedSpanishVoice;
+          speechSynthesis.speak(utterance);
+        };
+      } else {
+        // Speak now if voices are already loaded
+        speechSynthesis.speak(utterance);
+      }
+      
+    } catch (fallbackError) {
+      console.error("Fallback speech synthesis failed:", fallbackError);
+      setState(prev => ({
+        ...prev,
+        isSpeaking: false,
+        error: "Error en todos los sistemas de síntesis de voz"
+      }));
     }
   }, []);
 
@@ -279,27 +350,36 @@ const useVoice = () => {
         audio.play();
 
       } else {
-        // Fallback to browser speech synthesis
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'es-ES';
-        
-        utterance.onend = () => setState(prev => ({ ...prev, isSpeaking: false }));
-        speechSynthesis.speak(utterance);
-        return;
+        browserFallbackSpeech(text);
       }
     } catch (error) {
       console.error("Speech synthesis error:", error);
-      // Ensure speaking state is false if an error occurs before playback starts
-      if (audioRef.current) {
-         audioRef.current = null;
+
+      if (text) {
+        browserFallbackSpeech(text);
+      } else {
+        // Ensure speaking state is false if an error occurs before playback starts
+        if (audioRef.current) {
+          audioRef.current = null;
+        }
+        setState(prev => ({
+          ...prev,
+          isSpeaking: false,
+          error: `Error en la síntesis de voz: ${error.message}`
+        }));
       }
-      setState(prev => ({
-        ...prev,
-        isSpeaking: false,
-        error: `Error en la síntesis de voz: ${error.message}`
-      }));
     }
-  }, [voiceEnabled]);
+  }, [voiceEnabled, stopSpeaking, browserFallbackSpeech]);
+
+  // Fix the useEffect dependency array
+  useEffect(() => {
+    if (!voiceEnabled) return;
+    
+    return () => {
+      stopSpeaking(); // Stop any ongoing speech on unmount or when voice is disabled
+    };
+  }, [voiceEnabled, stopSpeaking]);
+
   return {
     ...state,
     voiceEnabled,
