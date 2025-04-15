@@ -1,15 +1,15 @@
-# Reforma Integral de Seguridad  
+# Transición Energética Verde  
 ## Propuesta Presidencial - Ana María Rodríguez 2028
 
-Ana María Rodríguez propone una **reforma integral de seguridad** para garantizar la paz y tranquilidad de los ciudadanos en todas las regiones de la República Dominicana. Esta reforma busca un enfoque integral y humano de la seguridad, donde la prevención y la justicia sean los pilares fundamentales.
+Ana María Rodríguez se compromete a liderar la **transición energética verde** en la República Dominicana, adoptando políticas que promuevan el uso de fuentes de energía renovable y sostenibles para reducir la dependencia de combustibles fósiles y disminuir las emisiones de gases contaminantes.
 
 ### Objetivos principales:
-1. **Fortalecimiento de la Policía Nacional**: Se fortalecerán los cuerpos de seguridad con más formación, tecnología, y mejores condiciones laborales, para que puedan responder de manera efectiva y justa ante las necesidades de la población.
-2. **Enfoque en Prevención**: Se impulsarán programas sociales y educativos que prevengan la criminalidad desde su raíz, ofreciendo alternativas de desarrollo a los jóvenes en situaciones vulnerables.
-3. **Justicia Rápida y Eficaz**: Se garantizará que los procesos judiciales sean rápidos y justos, con un sistema judicial que actúe de manera transparente y eficaz.
-4. **Rehabilitación y Reinserción Social**: La reforma también incluye un enfoque en la rehabilitación de quienes han cometido delitos, ofreciendo programas de reinserción para su reubicación en la sociedad.
-5. **Seguridad Comunitaria**: Se promoverá la participación activa de las comunidades en la construcción de la seguridad, fortaleciendo los lazos entre la policía y la ciudadanía.
+1. **Energías Renovables**: Fomentar la inversión en fuentes de energía renovables como la solar, eólica e hidroeléctrica, asegurando que el 50% de la energía consumida en el país provenga de fuentes limpias en los próximos 10 años.
+2. **Eficiencia Energética**: Promover el uso eficiente de la energía en los sectores industrial, comercial y residencial a través de incentivos fiscales y programas educativos.
+3. **Creación de Empleo Verde**: Impulsar la creación de nuevos empleos en el sector de las energías renovables y la sostenibilidad, especialmente en áreas rurales y desfavorecidas.
+4. **Política de Descarbonización**: Establecer una estrategia a largo plazo para reducir las emisiones de gases de efecto invernadero, con metas claras y alcanzables para 2030.
+5. **Incentivos para Inversiones Verdes**: Crear un ambiente propicio para las inversiones nacionales e internacionales en proyectos de energía verde y sostenible, apoyando la innovación en este campo.
 
-Con esta reforma, se busca una seguridad que no solo actúe como represiva, sino como un mecanismo preventivo y restaurador que propicie una sociedad más armónica y segura.
+Esta propuesta busca que la República Dominicana se convierta en un referente en el Caribe en cuanto a la adopción de tecnologías limpias y sostenibles.
 
-📄 [Descargar propuesta en PDF](./propuestas/reforma_integral_de_seguridad.pdf)
+📄 [Descargar propuesta en PDF](./public/assets/transicion_energetica_verde.pdf)

@@ -12,4 +12,4 @@ Ana María Rodríguez plantea la creación de un sistema de **salud universal y 
 
 Con esta propuesta, Ana María Rodríguez pretende garantizar que la salud deje de ser un privilegio y pase a ser un derecho fundamental para todos los ciudadanos de la nación.
 
-📄 [Descargar propuesta en PDF](./propuestas/salud_universal_accesible.pdf)
+📄 [Descargar propuesta en PDF](./public/assets/propuestas/salud_universal_accesible.pdf)

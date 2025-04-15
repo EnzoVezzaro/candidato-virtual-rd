@@ -1,19 +1,15 @@
-# Políticas Económicas
+# Reforma Integral de Seguridad  
+## Propuesta Presidencial - Ana María Rodríguez 2028
 
-## Reforma Fiscal Progresiva
-Implementaremos un sistema tributario más justo que reduzca la carga fiscal para la clase media y aumente las contribuciones de los grandes capitales y corporaciones. Esta reforma garantizará:
-- Reducción de impuestos a pequeñas empresas
-- Aumento de tasas a grandes monopolios
-- Cierre de lagunas fiscales para evitar la evasión
+Ana María Rodríguez propone una **reforma integral de seguridad** para garantizar la paz y tranquilidad de los ciudadanos en todas las regiones de la República Dominicana. Esta reforma busca un enfoque integral y humano de la seguridad, donde la prevención y la justicia sean los pilares fundamentales.
 
-## Inversión en Infraestructura
-Desarrollaremos un plan quinquenal de inversión en infraestructura sostenible, generando empleos de calidad y mejorando la competitividad económica. Nuestras prioridades son:
-- Modernización de la red de transporte público
-- Expansión de la conectividad digital en zonas rurales
-- Actualización de la red eléctrica para energías renovables
+### Objetivos principales:
+1. **Fortalecimiento de la Policía Nacional**: Se fortalecerán los cuerpos de seguridad con más formación, tecnología, y mejores condiciones laborales, para que puedan responder de manera efectiva y justa ante las necesidades de la población.
+2. **Enfoque en Prevención**: Se impulsarán programas sociales y educativos que prevengan la criminalidad desde su raíz, ofreciendo alternativas de desarrollo a los jóvenes en situaciones vulnerables.
+3. **Justicia Rápida y Eficaz**: Se garantizará que los procesos judiciales sean rápidos y justos, con un sistema judicial que actúe de manera transparente y eficaz.
+4. **Rehabilitación y Reinserción Social**: La reforma también incluye un enfoque en la rehabilitación de quienes han cometido delitos, ofreciendo programas de reinserción para su reubicación en la sociedad.
+5. **Seguridad Comunitaria**: Se promoverá la participación activa de las comunidades en la construcción de la seguridad, fortaleciendo los lazos entre la policía y la ciudadanía.
 
-## Políticas de Empleo
-Implementaremos políticas activas de empleo que favorezcan la creación de puestos de trabajo de calidad, con especial énfasis en:
-- Programas de primer empleo para jóvenes
-- Incentivos para la contratación en sectores estratégicos
-- Apoyo a la reconversión laboral en sectores afectados por la transición energética
+Con esta reforma, se busca una seguridad que no solo actúe como represiva, sino como un mecanismo preventivo y restaurador que propicie una sociedad más armónica y segura.
+
+📄 [Descargar propuesta en PDF](./public/assets/reforma_integral_de_seguridad.pdf)

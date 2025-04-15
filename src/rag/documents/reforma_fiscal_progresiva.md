@@ -12,4 +12,4 @@ Ana María Rodríguez propone una Reforma Fiscal Progresiva orientada a garantiz
 
 Esta reforma no solo busca aumentar los ingresos del Estado, sino también promover la justicia social, permitiendo una redistribución adecuada de los recursos que beneficie a todos los sectores de la sociedad.
 
-📄 [Descargar propuesta en PDF](./propuestas/reforma_fiscal_progresiva.pdf)
+📄 [Descargar propuesta en PDF](./public/assets/propuestas/reforma_fiscal_progresiva.pdf)

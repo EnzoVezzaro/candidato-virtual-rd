@@ -114,13 +114,13 @@ export const searchDocuments = async (query: string): Promise<Document[]> => {
           score: calculateSimilarity(queryEmbedding!, doc.embedding!)
         }));
 
-        /*
         console.log('Similarity scores:', scoredDocs.map(item => ({
           id: item.doc.id,
           score: item.score,
           category: item.doc.metadata.category
-        })));
-        */
+        }))
+          .sort((a, b) => b.score - a.score)
+        );
         
         // Ordenar por similitud (mayor a menor)
         return scoredDocs
@@ -165,7 +165,6 @@ export const searchDocuments = async (query: string): Promise<Document[]> => {
 export const generateRAGResponse = async (query: string): Promise<string> => {
   // Buscar documentos relevantes
   const relevantDocs = await searchDocuments(query);
-  console.log('aqui: ', relevantDocs);
   
   if (relevantDocs.length === 0) {
     return "Lo siento, no tengo información específica sobre esa consulta. ¿Puedo ayudarte con algo más?";
