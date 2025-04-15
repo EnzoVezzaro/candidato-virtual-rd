@@ -80,8 +80,8 @@ const candidateConfig: CandidateConfig = {
       category: "economy",
       resources: [
         {
-          title: "Plan económico detallado",
-          url: "/resources/plan-economico.pdf"
+          title: "Reforma Fiscal Progresiva",
+          url: "/propuestas/reforma_fiscal_progresiva.pdf"
         }
       ]
     },
@@ -89,25 +89,49 @@ const candidateConfig: CandidateConfig = {
       id: "prop-health-1",
       title: "Salud Universal Accesible",
       description: "Ampliación del sistema de salud pública para garantizar acceso universal a servicios médicos de calidad, con énfasis en prevención y atención primaria.",
-      category: "health"
+      category: "health",
+      resources: [
+        {
+          title: "Salud Universal Accesible",
+          url: "/propuestas/salud_universal_accesible.pdf"
+        }
+      ]
     },
     {
       id: "prop-education-1",
       title: "Educación Gratuita y de Calidad",
       description: "Garantizar educación pública gratuita desde preescolar hasta universidad, con inversión en infraestructura, tecnología y capacitación docente.",
-      category: "education"
+      category: "education",
+      resources: [
+        {
+          title: "Educacion Gratuita y de Calidad",
+          url: "/propuestas/educacion_gratuita_y_de_calidad.pdf"
+        }
+      ]
     },
     {
       id: "prop-environment-1",
       title: "Transición Energética Verde",
       description: "Plan de 10 años para transformar la matriz energética hacia fuentes renovables, creando empleos verdes y reduciendo emisiones de carbono.",
-      category: "environment"
+      category: "environment",
+      resources: [
+        {
+          title: "Transición Energética Verde",
+          url: "/propuestas/transición_energética_verde.pdf"
+        }
+      ]
     },
     {
       id: "prop-security-1",
       title: "Reforma Integral de Seguridad",
       description: "Enfoque preventivo que combine inversión social en comunidades vulnerables con modernización y profesionalización de cuerpos policiales.",
-      category: "security"
+      category: "security",
+      resources: [
+        {
+          title: "Reforma Integral de Seguridad",
+          url: "/propuestas/reforma_integral_de_seguridad.pdf"
+        }
+      ]
     }
   ],
   education: [
@@ -136,7 +160,7 @@ const candidateConfig: CandidateConfig = {
       apiKey: import.meta.env.VITE_PUBLIC_HUME,
     },
     output: {
-      provider: "elevenlabs",
+      provider: "none",
       voiceId: 'wBnAJRbu3cj93gnAm02O',
       apiKey: import.meta.env.VITE_PUBLIC_ELEVEN_LABS,
     }

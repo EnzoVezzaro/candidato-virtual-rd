@@ -68,6 +68,7 @@ export const loadDocuments = async (): Promise<Document[]> => {
 };
 
 // Función para calcular similitud entre vectores (producto punto)
+// Improved similarity calculation
 const calculateSimilarity = (vec1: number[], vec2: number[]): number => {
   if (vec1.length !== vec2.length) return 0;
   
@@ -81,10 +82,14 @@ const calculateSimilarity = (vec1: number[], vec2: number[]): number => {
     mag2 += vec2[i] * vec2[i];
   }
   
-  mag1 = Math.sqrt(mag1);
-  mag2 = Math.sqrt(mag2);
+  // Prevent division by zero
+  mag1 = Math.sqrt(mag1) || 1e-10;
+  mag2 = Math.sqrt(mag2) || 1e-10;
   
-  return dotProduct / (mag1 * mag2);
+  const similarity = dotProduct / (mag1 * mag2);
+  
+  // Ensure the result is within valid range [-1, 1]
+  return Math.max(-1, Math.min(1, similarity));
 };
 
 // Función para buscar documentos relevantes usando embeddings o fallback a búsqueda simple
@@ -97,22 +102,30 @@ export const searchDocuments = async (query: string): Promise<Document[]> => {
     } catch (error) {
       console.warn('No se pudo generar embedding para la consulta, usando búsqueda de texto:', error);
     }
-    
+
     if (queryEmbedding) {
       // Buscar usando similitud de embeddings
       const docsWithEmbeddings = documentStore.filter(doc => doc.embedding);
-      
+      // console.log('docsWithEmbeddings:_', docsWithEmbeddings);
       if (docsWithEmbeddings.length > 0) {
         // Calcular similitud para cada documento con embedding
         const scoredDocs = docsWithEmbeddings.map(doc => ({
           doc,
           score: calculateSimilarity(queryEmbedding!, doc.embedding!)
         }));
+
+        /*
+        console.log('Similarity scores:', scoredDocs.map(item => ({
+          id: item.doc.id,
+          score: item.score,
+          category: item.doc.metadata.category
+        })));
+        */
         
         // Ordenar por similitud (mayor a menor)
         return scoredDocs
           .sort((a, b) => b.score - a.score)
-          .filter(item => item.score > 0.7) // Umbral de similitud
+          .filter(item => item.score > 0.75) // Umbral de similitud
           .map(item => item.doc);
       }
     }
@@ -152,6 +165,7 @@ export const searchDocuments = async (query: string): Promise<Document[]> => {
 export const generateRAGResponse = async (query: string): Promise<string> => {
   // Buscar documentos relevantes
   const relevantDocs = await searchDocuments(query);
+  console.log('aqui: ', relevantDocs);
   
   if (relevantDocs.length === 0) {
     return "Lo siento, no tengo información específica sobre esa consulta. ¿Puedo ayudarte con algo más?";

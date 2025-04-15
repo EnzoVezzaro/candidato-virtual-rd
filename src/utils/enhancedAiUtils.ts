@@ -82,13 +82,10 @@ export const generateEnhancedResponse = async (
     // Si RAG está habilitado, usar la base de conocimiento
     if (useRAG) {
       console.log('Using RAG to generate response...');
-
       // Obtener respuesta de la base de conocimiento
       const ragResponse = await generateRAGResponse(query); 
-      
       // Si tenemos una respuesta de RAG, la usamos
       if (ragResponse && ragResponse !== "Lo siento, no tengo información específica sobre esa consulta. ¿Puedo ayudarte con algo más?") {
-        console.log('Found relevant information in knowledge base: ', ragResponse);
         // Combine the query and the RAG response to create a new prompt
         const combinedPrompt = `Basado en la siguiente información: ${ragResponse}\n\nEres ${candidateConfig.name}, este es tu bio ${candidateConfig.shortBio}(no te presentes. todos saben quien eres)\n\nResponde a la pregunta: ${query}`;
         // Generate the AI response using the combined prompt
