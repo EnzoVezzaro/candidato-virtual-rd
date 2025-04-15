@@ -6,8 +6,16 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Briefcase, GraduationCap, Heart, MedalIcon, MessageSquareIcon } from 'lucide-react';
+import ChatDialog from '@/components/Chat/ChatDialog';
+import { useState } from 'react';
 
 const Biography = () => {
+  const [isChatDialogOpen, setIsChatDialogOpen] = useState(false);
+
+  const handleOpenChat = () => {
+    setIsChatDialogOpen(true);
+  };
+
   const ideologyLabel = () => {
     switch (candidateConfig.ideology) {
       case 'progressive':
@@ -33,7 +41,7 @@ const Biography = () => {
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold mb-4">Biografía</h1>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Conoce mi trayectoria, experiencia y los valores que han guiado mi carrera.
+            Conozca a {candidateConfig.name}
           </p>
         </div>
 
@@ -53,22 +61,22 @@ const Biography = () => {
                 <p className="text-candidate-secondary dark:text-candidate-accent font-medium mb-4">
                   {ideologyLabel()}
                 </p>
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
-                  {candidateConfig.longBio}
-                </p>
+                <p className="text-gray-700 dark:text-gray-300 mb-6" dangerouslySetInnerHTML={{ __html: candidateConfig.longBio }} />
                 <div className="flex flex-wrap gap-4">
                   <Link to="/propuestas">
                     <Button variant="outline">
                       Ver propuestas
                     </Button>
                   </Link>
-                  <Link to="/chat">
-                    <Button className="bg-candidate-secondary hover:bg-candidate-primary text-white">
-                      <MessageSquareIcon size={16} className="mr-2" />
-                      Hablar conmigo
-                    </Button>
-                  </Link>
+                  <Button 
+                    className="bg-candidate-secondary hover:bg-candidate-primary text-white"
+                    onClick={handleOpenChat}
+                  >
+                    <MessageSquareIcon size={16} className="mr-2" />
+                    Hablar conmigo
+                  </Button>
                 </div>
+                <ChatDialog showTrigger={false} open={isChatDialogOpen} onOpenChange={setIsChatDialogOpen} />
               </div>
             </div>
           </div>

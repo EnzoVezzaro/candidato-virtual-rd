@@ -47,7 +47,7 @@ const Header = () => {
 
           {/* Chat Dialog Trigger */}
           <div className="hidden md:block">
-            <ChatDialog />
+            <ChatDialog showTrigger={true} />
           </div>
 
           {/* Mobile menu button */}
@@ -93,7 +93,7 @@ const Header = () => {
               </Link>
               {/* Chat Dialog Trigger for Mobile */}
               <div className="mt-2">
-                <ChatDialog />
+                <ChatDialog showTrigger={true} />
               </div>
             </nav>
           </div>

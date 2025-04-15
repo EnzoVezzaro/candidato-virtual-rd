@@ -2,10 +2,12 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Proposal } from '@/config/candidate.config';
 import { ArrowRightIcon, ExternalLinkIcon } from 'lucide-react';
 import { Button } from './ui/button';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ChatDialog from '@/components/Chat/ChatDialog';
+import { Proposal } from '@/lib/providers/ai/types';
 
 interface ProposalCardProps {
   proposal: Proposal;
@@ -31,7 +33,7 @@ const getCategoryLabel = (category: string): string => {
       return 'Política Exterior';
     default:
       return category;
-  }
+  };
 };
 
 const getCategoryColorClass = (category: string): string => {
@@ -54,10 +56,23 @@ const getCategoryColorClass = (category: string): string => {
       return 'bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-100';
     default:
       return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100';
-  }
+  };
 };
 
 const ProposalCard: React.FC<ProposalCardProps> = ({ proposal }) => {
+  const [isChatDialogOpen, setIsChatDialogOpen] = useState(false);
+  const [initialChatMessage, setInitialChatMessage] = useState('');
+
+  const handleOpenChat = () => {
+    setInitialChatMessage(`Me gustaria mas sobre tu propuesta sobre "${proposal.title}"`);
+    setIsChatDialogOpen(true);
+  };
+
+  const handleCloseChat = () => {
+    setIsChatDialogOpen(false);
+    setInitialChatMessage('');
+  };
+
   return (
     <Card className="transition-all duration-300 hover:shadow-md overflow-hidden">
       <CardHeader className="pb-2">
@@ -72,6 +87,15 @@ const ProposalCard: React.FC<ProposalCardProps> = ({ proposal }) => {
         <CardDescription className="text-gray-700 dark:text-gray-300 mb-4">
           {proposal.description}
         </CardDescription>
+        <div className="mt-4 flex justify-start">
+          <Button 
+            variant="link" 
+            className="text-candidate-secondary dark:text-candidate-accent p-0"
+            onClick={handleOpenChat}
+          >
+            Preguntar sobre esta propuesta <ArrowRightIcon size={16} className="ml-1" />
+          </Button>
+        </div>
         <div className="flex flex-wrap gap-2 mt-4">
           {proposal.resources && proposal.resources.length > 0 && (
             <div className="w-full">
@@ -94,13 +118,11 @@ const ProposalCard: React.FC<ProposalCardProps> = ({ proposal }) => {
             </div>
           )}
         </div>
-        <div className="mt-4 flex justify-end">
-          <Link to={`/chat?topic=${proposal.category}`}>
-            <Button variant="link" className="text-candidate-secondary dark:text-candidate-accent p-0">
-              Preguntar sobre esta propuesta <ArrowRightIcon size={16} className="ml-1" />
-            </Button>
-          </Link>
-        </div>
+        <ChatDialog 
+          open={isChatDialogOpen} 
+          onOpenChange={setIsChatDialogOpen}
+          initialQuestion={initialChatMessage}
+        />
       </CardContent>
     </Card>
   );

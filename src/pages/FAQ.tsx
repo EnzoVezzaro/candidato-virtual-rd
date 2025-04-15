@@ -8,6 +8,7 @@ import { SearchIcon, ArrowRightIcon, MessageSquareIcon } from 'lucide-react';
 import knowledgeBase, { KnowledgeEntry } from '@/data/knowledgeBase';
 import { Link } from 'react-router-dom';
 import { Category } from '@/config/candidate.config';
+import ChatDialog from '@/components/Chat/ChatDialog';
 
 // Map for category labels
 const categoryLabels: Record<Category, string> = {
@@ -24,6 +25,11 @@ const categoryLabels: Record<Category, string> = {
 const FAQ = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<Category | 'all'>('all');
+
+  const [isChatDialogOpen, setIsChatDialogOpen] = useState(false);
+  const handleOpenChat = () => {
+    setIsChatDialogOpen(true);
+  };
 
   // Get all unique categories from knowledge base
   const categories = Array.from(
@@ -117,12 +123,15 @@ const FAQ = () => {
           <p className="text-gray-600 dark:text-gray-300 mb-4">
             ¿No encontraste lo que buscabas? Puedes hacerme tu pregunta directamente.
           </p>
-          <Link to="/chat">
-            <Button className="bg-candidate-secondary hover:bg-candidate-primary text-white">
-              Iniciar conversación <ArrowRightIcon size={16} className="ml-2" />
-            </Button>
-          </Link>
+          <Button className="bg-candidate-secondary hover:bg-candidate-primary text-white" onClick={handleOpenChat}>
+            Iniciar conversación <ArrowRightIcon size={16} className="ml-2" />
+          </Button>
         </div>
+        <ChatDialog 
+          showTrigger={false} 
+          open={isChatDialogOpen} 
+          onOpenChange={setIsChatDialogOpen}
+        />
       </div>
     </Layout>
   );
@@ -134,6 +143,13 @@ interface FAQItemProps {
 
 const FAQItem: React.FC<FAQItemProps> = ({ entry }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isChatDialogOpen, setIsChatDialogOpen] = useState(false);
+  const [initialChatMessage, setInitialChatMessage] = useState('');
+
+  const handleOpenChat = () => {
+    setInitialChatMessage(entry.question);
+    setIsChatDialogOpen(true);
+  };
 
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:shadow-md">
@@ -171,11 +187,19 @@ const FAQItem: React.FC<FAQItemProps> = ({ entry }) => {
                   </span>
                 ))}
               </div>
-              <Link to={`/chat?q=${encodeURIComponent(entry.question)}`}>
-                <Button variant="link" className="text-candidate-secondary dark:text-candidate-accent p-0 h-auto">
-                  Preguntar más <ArrowRightIcon size={14} className="ml-1" />
-                </Button>
-              </Link>
+              <Button 
+                variant="link" 
+                className="text-candidate-secondary dark:text-candidate-accent p-0 h-auto"
+                onClick={handleOpenChat}
+              >
+                Preguntar más <ArrowRightIcon size={14} className="ml-1" />
+              </Button>
+              <ChatDialog 
+                showTrigger={false} 
+                open={isChatDialogOpen} 
+                onOpenChange={setIsChatDialogOpen}
+                initialQuestion={initialChatMessage}
+              />
             </div>
           </div>
         </div>
@@ -185,3 +209,4 @@ const FAQItem: React.FC<FAQItemProps> = ({ entry }) => {
 };
 
 export default FAQ;
+

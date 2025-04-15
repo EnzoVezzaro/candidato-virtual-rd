@@ -39,8 +39,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
     speak 
   } = useVoice();
 
-  console.log('transcript: ', transcript);
-
   useEffect(()=>{
     if (transcript){
       const userMessage: MessageType = {

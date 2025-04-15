@@ -131,22 +131,20 @@ const useVoice = () => {
       
       // Get available voices (optional but helpful)
       const voices = window.speechSynthesis.getVoices();
-      console.log("Available voices:", voices);
       // Try to find a Spanish voice
       const spanishVoice = voices.find(voice => voice.lang.includes('es') && voice.voiceURI === "Shelley (Spanish (Mexico))");
       if (spanishVoice) {
-        console.log("Using Spanish voice:", spanishVoice.name);
+        // console.log("Using Spanish voice:", spanishVoice.name);
         utterance.voice = spanishVoice;
       }
       
       // Event handlers
       utterance.onstart = () => console.log("Browser speech started");
       utterance.onend = () => {
-        console.log("Browser speech ended");
         setState(prev => ({ ...prev, isSpeaking: false }));
       };
       utterance.onerror = (event) => {
-        console.error("Browser speech synthesis error:", event);
+        // console.error("Browser speech synthesis error:", event);
         setState(prev => ({
           ...prev,
           isSpeaking: false,

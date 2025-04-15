@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -11,6 +11,8 @@ import ChatDialog from '@/components/Chat/ChatDialog'; // Import ChatDialog
 const Home = () => {
   // Get featured proposals (first 3)
   const featuredProposals = candidateConfig.proposals.slice(0, 3);
+  const [isChatDialogOpen, setIsChatDialogOpen] = useState(false);
+  const [initialChatMessage, setInitialChatMessage] = useState('');
   console.log('candidateConfig.profileImage: ', candidateConfig.profileImage);
   
   return (
@@ -108,7 +110,9 @@ const Home = () => {
               ¿Tienes preguntas sobre mis propuestas o quieres compartir tus inquietudes? Utiliza el asistente virtual para hablar conmigo en cualquier momento.
             </p>
             {/* Replace Link with ChatDialog */}
-            <ChatDialog />
+            <ChatDialog 
+              showTrigger={true}
+            />
           </div>
         </div>
       </section>

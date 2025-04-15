@@ -72,7 +72,8 @@
     "vaul": "^0.9.3",
     "vite-plugin-wasm": "^3.4.1",
     "voy-search": "^0.6.3",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
