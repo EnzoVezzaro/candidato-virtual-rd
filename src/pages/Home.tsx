@@ -107,7 +107,7 @@ const Home = () => {
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-white text-3xl font-bold mb-4">Habla conmigo directamente</h2>
             <p className="mb-6 text-white">
-              ¿Tienes preguntas sobre mis propuestas o quieres compartir tus inquietudes? Utiliza el asistente virtual para hablar conmigo en cualquier momento.
+              ¿Tienes preguntas sobre mis propuestas o quieres compartir tus inquietudes? Utiliza a {candidateConfig.aiName} para hablar conmigo en cualquier momento.
             </p>
             {/* Replace Link with ChatDialog */}
             <ChatDialog 
