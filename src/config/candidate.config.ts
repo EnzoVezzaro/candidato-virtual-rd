@@ -178,8 +178,8 @@ const candidateConfig: CandidateConfig = {
       apiKey: import.meta.env.VITE_PUBLIC_HUME,
     },
     output: {
-      provider: "none",
-      voiceId: 'wBnAJRbu3cj93gnAm02O',
+      provider: "elevenlabs",
+      voiceId: 'bis5ALyRHexz363PgC76',
       apiKey: import.meta.env.VITE_PUBLIC_ELEVEN_LABS,
     }
   },
