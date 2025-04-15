@@ -109,7 +109,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Reforma Fiscal Progresiva",
-          url: "//assets/propuestas/reforma_fiscal_progresiva.pdf"
+          url: "/assets/propuestas/reforma_fiscal_progresiva.pdf"
         }
       ]
     },
@@ -121,7 +121,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Salud Universal Accesible",
-          url: "//assets/propuestas/salud_universal_accesible.pdf"
+          url: "/assets/propuestas/salud_universal_accesible.pdf"
         }
       ]
     },
@@ -133,7 +133,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Educacion Gratuita y de Calidad",
-          url: "//assets/propuestas/educacion_gratuita_y_de_calidad.pdf"
+          url: "/assets/propuestas/educacion_gratuita_y_de_calidad.pdf"
         }
       ]
     },
@@ -145,7 +145,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Transición Energética Verde",
-          url: "//assets/propuestas/transición_energética_verde.pdf"
+          url: "/assets/propuestas/transición_energética_verde.pdf"
         }
       ]
     },
@@ -157,7 +157,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Reforma Integral de Seguridad",
-          url: "//assets/propuestas/reforma_integral_de_seguridad.pdf"
+          url: "/assets/propuestas/reforma_integral_de_seguridad.pdf"
         }
       ]
     }
