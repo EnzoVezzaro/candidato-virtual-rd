@@ -103,10 +103,13 @@ export const generateEnhancedResponse = async (
         allProposals += contents;
       });
       console.log('propuestasFiles. ', allProposals);
-      const promptNoFound = `<NOTIFICAR AL USUARIO>ESTO NO ES PARA EL USUARIO, ES PARA TI >>> Lamentablemente, ese tema específico no está contemplado dentro de tus propuestas actuales. Avisale al usuario que sin embargo, valoras mucho que haya mencionado este tema, ya que escuchar las inquietudes de la poblacion es clave para seguir construyendo un plan que realmente responda a las necesidades del país. Aunque no forma parte de tu agenda por el momento, tomo nota de su preocupación. Pero que puedes ayudar con las demas propuestas que tienes.<FIN NOTIFICA AL USUARIO>
+      /*
+      NOT GIVING GOOD RESULTS
+      const promptNoFound = `<NOTIFICAR AL USUARIO>ESTO NO ES PARA EL USUARIO, ES PARA TI >>> SOLO SI no tienes la respuesta para la pregunta del usuario >> Lamentablemente, ese tema específico no está contemplado dentro de tus propuestas actuales. Avisale al usuario que sin embargo, valoras mucho que haya mencionado este tema, ya que escuchar las inquietudes de la poblacion es clave para seguir construyendo un plan que realmente responda a las necesidades del país. Aunque no forma parte de tu agenda por el momento, tomo nota de su preocupación. Pero que puedes ayudar con las demas propuestas que tienes.<FIN NOTIFICA AL USUARIO>
         Este es tu programa de gobierno ${allProposals}
       `;
       return await aiProvider.generateText(promptNoFound); 
+      */
     }
 
     // Si RAG no está habilitado o no encontró información relevante,

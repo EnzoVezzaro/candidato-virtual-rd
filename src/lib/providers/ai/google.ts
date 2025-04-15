@@ -126,7 +126,7 @@ export class GoogleProvider implements AIProvider {
           content: {
             parts: [{ text }]
           },
-          taskType: "QUESTION_ANSWERING"
+          taskType: "RETRIEVAL_DOCUMENT"
         })
       });
       if (!response.ok) {

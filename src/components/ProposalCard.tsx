@@ -39,23 +39,23 @@ const getCategoryLabel = (category: string): string => {
 const getCategoryColorClass = (category: string): string => {
   switch (category) {
     case 'health':
-      return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100';
+      return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100 hover:bg-green-100';
     case 'economy':
-      return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100';
+      return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100 hover:bg-blue-100';
     case 'security':
-      return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100';
+      return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100 hover:bg-red-100';
     case 'education':
-      return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100';
+      return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100 hover:bg-purple-100';
     case 'environment':
-      return 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-100';
+      return 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-100 hover:bg-teal-100';
     case 'immigration':
-      return 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-100';
+      return 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-100 hover:bg-amber-100';
     case 'technology':
-      return 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-100';
+      return 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-100 hover:bg-indigo-100';
     case 'foreign_policy':
-      return 'bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-100';
+      return 'bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-100 hover:bg-slate-100';
     default:
-      return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100';
+      return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 hover:bg-gray-100';
   };
 };
 

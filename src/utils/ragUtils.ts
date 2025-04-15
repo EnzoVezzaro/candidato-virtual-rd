@@ -1,6 +1,7 @@
 
 import candidateConfig from '@/config/candidate.config';
 import { generateEmbedding } from './enhancedAiUtils';
+import { cosineSimilarity, embedMany } from 'ai';
 
 // Tipos para el sistema RAG
 export type Document = {
@@ -149,13 +150,14 @@ export const searchDocuments = async (query: string): Promise<Document[]> => {
         // Calcular similitud para cada documento con embedding
         const scoredDocs = docsWithEmbeddings.map(doc => ({
           doc,
-          score: calculateSimilarity(queryEmbedding!, doc.embedding!)
+          score: cosineSimilarity(queryEmbedding!, doc.embedding!)
         }));
 
         console.log('Similarity scores:', scoredDocs.map(item => ({
           id: item.doc.id,
           score: item.score,
-          category: item.doc.metadata.category
+          category: item.doc.metadata.category,
+          query: query
         }))
           .sort((a, b) => b.score - a.score)
         );
