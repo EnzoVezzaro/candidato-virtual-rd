@@ -145,7 +145,7 @@ const candidateConfig: CandidateConfig = {
       resources: [
         {
           title: "Transición Energética Verde",
-          url: "/assets/propuestas/transición_energética_verde.pdf"
+          url: "/assets/propuestas/transicion_energetica_verde.pdf"
         }
       ]
     },
