@@ -6,7 +6,8 @@ import {
   VoiceProvider,
   AIModel,
   RAGProvider,
-  AIProvider
+  AIProvider,
+  LocalDiscussions
 } from '@/lib/providers/ai/types';
 
 export type CandidateConfig = {
@@ -15,6 +16,7 @@ export type CandidateConfig = {
   profileImage: string;
   shortBio: string;
   longBio: string;
+  localDiscussions: LocalDiscussions[]
   socialMedia: SocialMedia[];
   ideology: Ideology;
   proposals: Proposal[];
@@ -59,6 +61,20 @@ const candidateConfig: CandidateConfig = {
   profileImage: "/imges/candidate.png",
   shortBio: "Economista, activista social y candidata a la gobernación comprometida con la justicia social y el desarrollo sostenible.",
   longBio: "Las políticas de AI Ana Maria serán implementadas por la “verdadera” Ana María Rodríguez, quien asistirá al Parlamento; por lo tanto, también es importante que los votantes conozcan su trayectoria, actitudes y capacidades. <br /><br />Ana María Rodríguez es una economista con más de 15 años de experiencia en políticas públicas y desarrollo económico. Nacida y criada en una familia trabajadora, Ana María conoce de primera mano los desafíos que enfrentan las familias de clase media. Su carrera ha estado dedicada a crear oportunidades económicas para todos y luchar por un sistema más justo y equitativo.",
+  localDiscussions: [
+    {
+      comment: "¿Qué crees que deberíamos hacer con el tema de la migración en el país?",
+      user: "Juan Pérez, empresario"
+    },
+    {
+      comment: "¿Cuál es tu propuesta para resolver el problema de la vivienda?",
+      user: "Juana Gómez, profesora"
+    },
+    {
+      comment: "¿Qué crees que deberíamos hacer con el tema del transito?",
+      user: "Eugenio Martinez, chofer"
+    }
+  ],
   socialMedia: [
     {
       platform: "twitter",
@@ -153,7 +169,7 @@ const candidateConfig: CandidateConfig = {
     "Innovación y adaptación tecnológica",
     "Diversidad e inclusión"
   ],
-  vision: "Un país próspero, justo y sostenible donde cada persona pueda desarrollar su potencial, con instituciones fuertes, economía dinámica y respeto por el medio ambiente.",
+  vision: "Por un país próspero, justo y sostenible donde cada persona pueda desarrollar su potencial, con instituciones fuertes, economía dinámica y respeto por el medio ambiente.",
   voiceEnabled: true,
   voiceConfig: {
     input: {

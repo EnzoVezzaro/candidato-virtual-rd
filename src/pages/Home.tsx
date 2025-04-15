@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
-import { ArrowRightIcon, MessageSquareIcon, FileTextIcon, UserIcon } from 'lucide-react';
+import { ArrowRightIcon, MessageSquareIcon, FileTextIcon, UserIcon, MicIcon } from 'lucide-react';
 import candidateConfig from '@/config/candidate.config';
 import ProposalCard from '@/components/ProposalCard';
 import ChatDialog from '@/components/Chat/ChatDialog'; // Import ChatDialog
@@ -13,12 +13,14 @@ const Home = () => {
   const featuredProposals = candidateConfig.proposals.slice(0, 3);
   const [isChatDialogOpen, setIsChatDialogOpen] = useState(false);
   const [initialChatMessage, setInitialChatMessage] = useState('');
-  console.log('candidateConfig.profileImage: ', candidateConfig.profileImage);
+  const handleOpenChat = () => {
+    setIsChatDialogOpen(true);
+  };
   
   return (
     <Layout>
       {/* Hero section */}
-      <section className="py-12 md:py-20">
+      <section className="md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
@@ -27,21 +29,41 @@ const Home = () => {
                 {candidateConfig.name}
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
-              {candidateConfig.shortBio}
-            </p>
             <p className="text-gray-700 dark:text-gray-300 mb-8">
               {candidateConfig.vision}
             </p>
-            <div className="flex flex-wrap gap-4">
-              {/* Replace Link with ChatDialog */}
-              <ChatDialog showTrigger={true} /> 
-              <Link to="/propuestas">
-                <Button variant="outline">
-                  <FileTextIcon size={18} className="mr-2" />
-                  Ver propuestas
+            
+            <p className="text-xl font-bold mb-2">
+              Así luce una democracia reinventada.
+            </p>
+            
+            {/* Interaction box */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+              <h3 className="text-xl font-bold mb-4">
+                Pregúntale a {candidateConfig.aiName}
+              </h3>
+              <p className="mb-2">
+                Temas locales que te importan, como por ejemplo:
+              </p>
+              {
+                candidateConfig.localDiscussions.map((local)=> {
+                  return (
+                    <div className="pl-4 border-l-4 border-primary my-4 italic">
+                      <p className="mb-2">{local.comment}</p>
+                      <p className="text-sm text-gray-600">— {local.user}</p>
+                    </div>
+                  )
+                })
+              }
+              <div className="mt-6">
+                <ChatDialog showTrigger={false} open={isChatDialogOpen} onOpenChange={setIsChatDialogOpen} />
+                <Button 
+                  onClick={handleOpenChat}
+                  className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
+                  <MicIcon size={18} />
+                  Habla con AI María
                 </Button>
-              </Link>
+              </div>
             </div>
           </div>
           <div className="rounded-xl border border-gray-200 dark:border-gray-800 justify-center flex">
@@ -81,7 +103,7 @@ const Home = () => {
       </section>
 
       {/* Values section */}
-      <section className="py-12 border-t border-gray-200 dark:border-gray-800">
+      <section className="py-12 mb-[150px] border-t border-gray-200 dark:border-gray-800">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">Mis valores</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -104,15 +126,46 @@ const Home = () => {
       {/* CTA section */}
       <section className="py-12 border-t border-gray-200 dark:border-gray-800">
         <div className="bg-gradient-to-r from-candidate-primary to-candidate-secondary rounded-xl p-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-white text-3xl font-bold mb-4">Habla conmigo directamente</h2>
-            <p className="mb-6 text-white">
-              ¿Tienes preguntas sobre mis propuestas o quieres compartir tus inquietudes? Utiliza a {candidateConfig.aiName} para hablar conmigo en cualquier momento.
-            </p>
-            {/* Replace Link with ChatDialog */}
-            <ChatDialog 
-              showTrigger={true}
-            />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            {/* Vote button */}
+            <div className="flex items-center justify-center md:justify-start">
+              <div className="">
+                
+              </div>
+              <div className="absolute" style={{ zIndex: 2 }}>
+                <img 
+                  src={candidateConfig.profileImage} 
+                  alt={candidateConfig.name}
+                  style={{ width: '100%', maxWidth: 414, maxHeight: 500, overflow: 'inherit', position: 'relative', bottom: 60 }}
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Middle info */}
+            <div>
+              <h3 className="text-xl font-bold mb-2 text-white">Una presidenta <span className="text-teal-400">que realmente representa tu voz.</span></h3>
+              <p className="text-gray-200">
+                Las propuestas y decisiones de <strong>AI María</strong> se basarán 100% en lo que piensa y siente la gente.
+              </p>
+            </div>
+            
+            {/* Right info */}
+            <div>
+              <h3 className="text-xl font-bold mb-2 text-white">Disponible <span className="text-teal-400">24/7, los 365 días del año</span>.</h3>
+              <p className="text-gray-200">
+                Una líder con la que realmente puedes hablar, desde donde estés, cuando tú quieras. <strong>AI María escucha. Y responde.</strong>
+              </p>
+            </div>
+            <div className="mt-6 absolute" style={{ zIndex: 9 }}>
+              <ChatDialog showTrigger={false} open={isChatDialogOpen} onOpenChange={setIsChatDialogOpen} />
+              <Button 
+                onClick={handleOpenChat}
+                className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
+                <MicIcon size={18} />
+                Habla con AI María
+              </Button>
+            </div>
           </div>
         </div>
       </section>

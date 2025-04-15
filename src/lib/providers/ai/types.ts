@@ -13,6 +13,11 @@ export type Proposal = {
   }[];
 };
 
+export type LocalDiscussions = {
+  comment: string;
+  user: string;
+}
+
 export type SocialMedia = {
   platform: 'twitter' | 'facebook' | 'instagram' | 'linkedin' | 'youtube' | 'tiktok';
   url: string;

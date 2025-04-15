@@ -125,7 +125,7 @@ export const searchDocuments = async (query: string): Promise<Document[]> => {
         // Ordenar por similitud (mayor a menor)
         return scoredDocs
           .sort((a, b) => b.score - a.score)
-          .filter(item => item.score > 0.75) // Umbral de similitud
+          .filter(item => item.score > 0.7) // Umbral de similitud
           .map(item => item.doc);
       }
     }
