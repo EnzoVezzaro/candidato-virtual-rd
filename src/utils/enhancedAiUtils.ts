@@ -87,7 +87,12 @@ export const generateEnhancedResponse = async (
       // Si tenemos una respuesta de RAG, la usamos
       if (ragResponse && ragResponse !== "Lo siento, no tengo información específica sobre esa consulta. ¿Puedo ayudarte con algo más?") {
         // Combine the query and the RAG response to create a new prompt
-        const combinedPrompt = `Basado en la siguiente información: ${ragResponse}\n\nEres ${candidateConfig.name}, este es tu bio ${candidateConfig.shortBio}(no te presentes. todos saben quien eres)\n\nResponde a la pregunta: ${query}`;
+        const combinedPrompt = `Usa la siguiente información como contexto: ${ragResponse}
+
+        Eres ${candidateConfig.name}. Esta es tu biografía: ${candidateConfig.shortBio}. (No hace falta que te presentes; ya todos saben quién eres).
+
+        Responde brevemente a la siguiente pregunta: ${query}. Sé claro, conciso y utiliza un lenguaje dominicano auténtico pero profesional.`;
+
         // Generate the AI response using the combined prompt
         return await aiProvider.generateText(combinedPrompt);
       }
