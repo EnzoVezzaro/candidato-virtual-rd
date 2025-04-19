@@ -17,6 +17,7 @@ export type CandidateConfig = {
   emailContact: string;
   profileImage: string;
   footerImage: string;
+  realImage: string;
   shortBio: string;
   longBio: string;
   localDiscussions: LocalDiscussions[]
@@ -69,6 +70,7 @@ const candidateConfig: CandidateConfig = {
   aiName: "AI María",
   profileImage: "/images/candidate.png",
   footerImage: "/images/candidate.png",
+  realImage: "/images/candidate_real.png",
   emailContact: "contacto@anamariarodriguez.com",
   shortBio: "Economista, activista social y candidata a la gobernación comprometida con la justicia social y el desarrollo sostenible.",
   longBio: "Las políticas de AI Ana Maria serán implementadas por la 'verdadera' Ana María Rodríguez, quien asistirá al Gobierno; por lo tanto, también es importante que los votantes conozcan su trayectoria, actitudes y capacidades. <br /><br />Ana María Rodríguez es una economista con más de 15 años de experiencia en políticas públicas y desarrollo económico. Nacida y criada en una familia trabajadora, Ana María conoce de primera mano los desafíos que enfrentan las familias de clase media. Su carrera ha estado dedicada a crear oportunidades económicas para todos y luchar por un sistema más justo y equitativo.",
