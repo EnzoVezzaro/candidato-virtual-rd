@@ -257,7 +257,7 @@ const candidateConfig: CandidateConfig = {
     provider: "supabase",
   },
   primaryColor: "#1A365D", 
-  secondaryColor: "#7E3AF2",
+  secondaryColor: "#d32c2c",
   accentColor: "#F7B733",
 };
 
