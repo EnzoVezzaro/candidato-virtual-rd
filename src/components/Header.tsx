@@ -25,7 +25,7 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-lg">{candidateConfig.name}</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">Candidato Virtual</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">Especialista Virtual</span>
             </div>
           </Link>
 

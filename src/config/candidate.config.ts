@@ -67,25 +67,25 @@ export type CandidateConfig = {
 // Default candidate configuration for sample purposes
 const candidateConfig: CandidateConfig = {
   name: "Ana María Rodríguez",
-  aiName: "AI María",
+  aiName: "Especialista Constitucional",
   profileImage: "/images/candidate.png",
   footerImage: "/images/candidate.png",
   realImage: "/images/candidate_real.png",
   emailContact: "contacto@anamariarodriguez.com",
-  shortBio: "Economista, activista social y candidata a la gobernación comprometida con la justicia social y el desarrollo sostenible.",
-  longBio: "Las políticas de AI Ana Maria serán implementadas por la 'verdadera' Ana María Rodríguez, quien asistirá al Gobierno; por lo tanto, también es importante que los votantes conozcan su trayectoria, actitudes y capacidades. <br /><br />Ana María Rodríguez es una economista con más de 15 años de experiencia en políticas públicas y desarrollo económico. Nacida y criada en una familia trabajadora, Ana María conoce de primera mano los desafíos que enfrentan las familias de clase media. Su carrera ha estado dedicada a crear oportunidades económicas para todos y luchar por un sistema más justo y equitativo.",
+  shortBio: "Abogada constitucionalista y especialista en la Constitución Dominicana con amplia experiencia en derecho constitucional y derechos fundamentales.",
+  longBio: "La perspectiva de Especialista Constitucional se basa en el profundo conocimiento de Ana María Rodríguez sobre la Constitución Dominicana. <br /><br />Ana María Rodríguez es una abogada constitucionalista con más de 15 años de experiencia en derecho constitucional. Se graduó con honores de la Universidad Autónoma de Santo Domingo y ha dedicado su carrera a la interpretación, defensa y divulgación de la Constitución Dominicana. Ha colaborado en importantes casos ante el Tribunal Constitucional y es autora de varios artículos académicos sobre los principios fundamentales de la carta magna dominicana.",
   localDiscussions: [
     {
-      comment: "¿Qué crees que deberíamos hacer con el tema de la migración en el país?",
-      user: "Juan Pérez, empresario"
+      comment: "¿Qué establece la Constitución sobre el tema migratorio en la República Dominicana?",
+      user: "Juan Pérez, ciudadano"
     },
     {
-      comment: "¿Cuál es tu propuesta para resolver el problema de la vivienda?",
+      comment: "¿Cómo garantiza la Constitución el derecho a la vivienda digna?",
       user: "Juana Gómez, profesora"
     },
     {
-      comment: "¿Qué crees que deberíamos hacer con el tema del transito?",
-      user: "Eugenio Martinez, chofer"
+      comment: "¿Qué dice la Constitución sobre el ordenamiento territorial y el transporte?",
+      user: "Eugenio Martínez, conductor"
     }
   ],
   socialMedia: [
@@ -105,133 +105,129 @@ const candidateConfig: CandidateConfig = {
   ideology: "progressive",
   proposals: [
     {
-      id: "prop-economy-1",
-      title: "Reforma Fiscal Progresiva",
-      description: "Implementación de un sistema tributario más justo que reduzca la carga fiscal para la clase media y aumente las contribuciones de los grandes capitales y corporaciones.",
-      category: "economy",
-      resources: [
-        {
-          title: "Reforma Fiscal Progresiva",
-          url: "/assets/propuestas/reforma_fiscal_progresiva.pdf"
-        }
-      ]
-    },
-    {
-      id: "prop-health-1",
-      title: "Salud Universal Accesible",
-      description: "Ampliación del sistema de salud pública para garantizar acceso universal a servicios médicos de calidad, con énfasis en prevención y atención primaria.",
-      category: "health",
-      resources: [
-        {
-          title: "Salud Universal Accesible",
-          url: "/assets/propuestas/salud_universal_accesible.pdf"
-        }
-      ]
-    },
-    {
-      id: "prop-education-1",
-      title: "Educación Gratuita y de Calidad",
-      description: "Garantizar educación pública gratuita desde preescolar hasta universidad, con inversión en infraestructura, tecnología y capacitación docente.",
+      id: "topic-constitution-1",
+      title: "Principios Fundamentales",
+      description: "Análisis de los principios fundamentales establecidos en la Constitución Dominicana (Artículos 1-7).",
       category: "education",
       resources: [
         {
-          title: "Educacion Gratuita y de Calidad",
-          url: "/assets/propuestas/educacion_gratuita_y_de_calidad.pdf"
+          title: "Análisis: Principios Fundamentales",
+          url: "/assets/propuestas/principios_fundamentales.pdf"
         }
       ]
     },
     {
-      id: "prop-environment-1",
-      title: "Transición Energética Verde",
-      description: "Plan de 10 años para transformar la matriz energética hacia fuentes renovables, creando empleos verdes y reduciendo emisiones de carbono.",
-      category: "environment",
+      id: "topic-constitution-2",
+      title: "Derechos Fundamentales",
+      description: "Estudio detallado de los derechos fundamentales garantizados por la Constitución Dominicana (Artículos 37-74).",
+      category: "education",
       resources: [
         {
-          title: "Transición Energética Verde",
-          url: "/assets/propuestas/transicion_energetica_verde.pdf"
+          title: "Análisis: Derechos Fundamentales",
+          url: "/assets/propuestas/derechos_fundamentales.pdf"
         }
       ]
     },
     {
-      id: "prop-security-1",
-      title: "Reforma Integral de Seguridad",
-      description: "Enfoque preventivo que combine inversión social en comunidades vulnerables con modernización y profesionalización de cuerpos policiales.",
-      category: "security",
+      id: "topic-constitution-3",
+      title: "Garantías de los Derechos Fundamentales",
+      description: "Análisis de los mecanismos constitucionales para la protección de derechos fundamentales (Artículos 68-73).",
+      category: "education",
       resources: [
         {
-          title: "Reforma Integral de Seguridad",
-          url: "/assets/propuestas/reforma_integral_de_seguridad.pdf"
+          title: "Análisis: Garantías Constitucionales",
+          url: "/assets/propuestas/garantias_constitucionales.pdf"
         }
       ]
     },
     {
-      id: "prop-immigration-1",
-      title: "Política de Inmigración Justa y Humana",
-      description: "Implementación de una política migratoria que priorice la integración, el respeto a los derechos humanos y la contribución de los inmigrantes a nuestra sociedad.",
-      category: "immigration",
+      id: "topic-constitution-4",
+      title: "Poderes del Estado",
+      description: "Explicación de la estructura y funciones de los poderes del Estado según la Constitución Dominicana (Artículos 76-184).",
+      category: "education",
       resources: [
         {
-          title: "Política de Inmigración Justa y Humana",
-          url: "/assets/propuestas/politica_inmigracion_justa_y_humana.pdf"
+          title: "Análisis: Poderes del Estado",
+          url: "/assets/propuestas/poderes_del_estado.pdf"
+        }
+      ]
+    },
+    {
+      id: "topic-constitution-5",
+      title: "Economía y Finanzas Públicas",
+      description: "Análisis del régimen económico y financiero establecido en la Constitución Dominicana (Artículos 217-234).",
+      category: "education",
+      resources: [
+        {
+          title: "Análisis: Régimen Económico",
+          url: "/assets/propuestas/regimen_economico.pdf"
+        }
+      ]
+    },
+    {
+      id: "topic-constitution-6",
+      title: "Reforma Constitucional",
+      description: "Estudio del procedimiento para reformar la Constitución Dominicana (Artículos 267-272).",
+      category: "education",
+      resources: [
+        {
+          title: "Análisis: Reforma Constitucional",
+          url: "/assets/propuestas/reforma_constitucional.pdf"
         }
       ]
     }
   ],
   questionSuggestions: [
-    "¿Cómo beneficiará la reforma fiscal a los más vulnerables?",
-    "¿Qué hará para eliminar exenciones fiscales a grandes corporaciones?",
-    "¿Cómo garantizará el acceso universal a la salud en zonas rurales?",
-    "¿Cómo garantizará la sostenibilidad del sistema de salud?",
-    "¿Cómo combinará gratuidad y calidad en la educación pública?",
-    "¿Cómo reducirá desigualdades en el acceso a educación superior?",
-    "¿Cuáles son los desafíos de la transición energética?",
-    "¿Qué incentivos dará para usar energías limpias?",
-    "¿Cómo involucrará a las comunidades en la seguridad?",
-    "¿Qué reformas hará en el sistema judicial y policial?"
-  ],  
+    "¿Qué establece la Constitución Dominicana sobre la soberanía nacional?",
+    "¿Cuáles son los derechos fundamentales garantizados en la Constitución Dominicana?",
+    "¿Cómo funciona el procedimiento de amparo constitucional en República Dominicana?",
+    "¿Qué establece la Constitución sobre la nacionalidad dominicana?",
+    "¿Cuáles son las atribuciones del Tribunal Constitucional según la Constitución?",
+    "¿Cómo regula la Constitución Dominicana la relación entre Estado e Iglesia?"
+  ],
   education: [
-    "Doctorado en Economía, Universidad Nacional, 2010",
-    "Maestría en Políticas Públicas, Universidad Internacional, 2005",
-    "Licenciatura en Economía, Universidad Estatal, 2003"
+    "Doctorado en Derecho Constitucional, Universidad de Salamanca, 2010",
+    "Maestría en Derecho Público, Universidad Nacional Pedro Henríquez Ureña, 2005",
+    "Licenciatura en Derecho, Universidad Autónoma de Santo Domingo, 2003"
   ],
   experience: [
-    "Directora de Desarrollo Económico, Ministerio de Economía (2015-2020)",
-    "Asesora económica en el Congreso Nacional (2010-2015)",
-    "Investigadora en el Instituto de Políticas Públicas (2005-2010)"
+    "Asesora del Tribunal Constitucional de la República Dominicana (2015-2020)",
+    "Profesora de Derecho Constitucional, Universidad Autónoma de Santo Domingo (2010-presente)",
+    "Investigadora en el Instituto de Derecho Constitucional (2005-2010)"
   ],
   values: [
     {
-      id: "social-justice",
-      title: "Justicia social e igualdad de oportunidades",
-      description: "Trabajaré para crear un sistema donde todos tengan acceso equitativo a recursos, oportunidades y protecciones sociales independientemente de su origen.",
+      id: "constitutional-rights",
+      title: "Derechos Constitucionales",
+      description: "Defensa y promoción de los derechos fundamentales establecidos en la Constitución Dominicana para todos los ciudadanos.",
       icon: React.createElement(Shield, { className: "text-candidate-primary" })
     },
     {
       id: "transparency",
-      title: "Transparencia y gobierno abierto",
-      description: "Me comprometo a una gestión pública transparente donde la ciudadanía pueda participar activamente en la toma de decisiones y acceder a información clara.",
+      title: "Transparencia Institucional",
+      description: "Compromiso con la transparencia institucional y la rendición de cuentas como principios establecidos en la Constitución.",
       icon: React.createElement(UserCheck, { className: "text-candidate-primary" })
     },
     {
-      id: "sustainability",
-      title: "Desarrollo sostenible y responsabilidad ambiental",
-      description: "Impulsaré políticas que equilibren el crecimiento económico con la protección del medio ambiente, asegurando recursos para generaciones futuras.",
+      id: "sovereignty",
+      title: "Soberanía Nacional",
+      description: "Defensa de la soberanía nacional y los principios de independencia establecidos en la Constitución Dominicana.",
       icon: React.createElement(Globe, { className: "text-candidate-primary" })
     },
     {
-      id: "innovation",
-      title: "Innovación y adaptación tecnológica",
-      description: "Promoveré la transformación digital inclusiva que mejore servicios públicos y facilite la participación ciudadana a través de tecnologías accesibles.",
+      id: "constitutional-development",
+      title: "Desarrollo Constitucional",
+      description: "Promoción de la evolución e interpretación constitucional para responder a los desafíos contemporáneos.",
       icon: React.createElement(Lightbulb, { className: "text-candidate-primary" })
     },
     {
-      id: "diversity",
-      title: "Diversidad e inclusión",
-      description: "Defenderé una sociedad que celebre y proteja la diversidad en todas sus formas, garantizando derechos y oportunidades para todos los grupos sociales.",
+      id: "equality",
+      title: "Igualdad Constitucional",
+      description: "Defensa del principio de igualdad ante la ley y no discriminación establecido en la Constitución Dominicana.",
       icon: React.createElement(Users, { className: "text-candidate-primary" })
     }
   ],
-  vision: "Por un país próspero, justo y sostenible donde cada persona pueda desarrollar su potencial, con instituciones fuertes, economía dinámica y respeto por el medio ambiente.",
+  vision: "La Constitución Dominicana es la base para una sociedad justa, equitativa y próspera, donde se garantizan los derechos fundamentales y el bienestar de todos sus ciudadanos.",
   voiceEnabled: false,
   voiceConfig: {
     input: {
