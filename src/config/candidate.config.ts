@@ -71,7 +71,7 @@ const candidateConfig: CandidateConfig = {
   footerImage: "/images/candidate.png",
   emailContact: "contacto@karlarodriguezalcantara.com",
   shortBio: "Economista, activista social y candidata a la gobernación comprometida con la justicia social y el desarrollo sostenible.",
-  longBio: "Las políticas de AI Karla serán implementadas por la 'verdadera' Karla Rodríguez Alcantara, quien asistirá al Gobierno; por lo tanto, también es importante que los votantes conozcan su trayectoria, actitudes y capacidades. <br /><br />Karla Rodríguez Alcantara es una economista con más de 15 años de experiencia en políticas públicas y desarrollo económico. Nacida y criada en una familia trabajadora, Ana María conoce de primera mano los desafíos que enfrentan las familias de clase media. Su carrera ha estado dedicada a crear oportunidades económicas para todos y luchar por un sistema más justo y equitativo.",
+  longBio: "Las políticas de AI Karla serán implementadas por la 'verdadera' Karla Rodríguez Alcantara, quien asistirá al Gobierno; por lo tanto, también es importante que los votantes conozcan su trayectoria, actitudes y capacidades. <br /><br />Karla Rodríguez Alcantara es una economista con más de 15 años de experiencia en políticas públicas y desarrollo económico. Nacida y criada en una familia trabajadora, Karla conoce de primera mano los desafíos que enfrentan las familias de clase media. Su carrera ha estado dedicada a crear oportunidades económicas para todos y luchar por un sistema más justo y equitativo.",
   localDiscussions: [
     {
       comment: "¿Qué crees que deberíamos hacer con el tema de la migración en el país?",
