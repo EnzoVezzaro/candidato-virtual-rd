@@ -56,7 +56,7 @@ const Biography = () => {
             <div className="md:flex">
               <div className="md:w-1/3">
                 <img 
-                  src={candidateConfig.profileImage} 
+                  src={candidateConfig.realImage} 
                   alt={candidateConfig.name}
                   className="w-full h-full object-cover object-center"
                 />

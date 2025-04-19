@@ -1,15 +1,15 @@
-# Reforma Fiscal Progresiva  
-## Propuesta Presidencial - Ana María Rodríguez 2028
+# Modernización Fiscal
+## Propuesta Presidencial - Raul Almonte Peguero 2028
 
-Ana María Rodríguez propone una Reforma Fiscal Progresiva orientada a garantizar una distribución más justa de la carga tributaria en la República Dominicana. El sistema fiscal actual no ha logrado reducir la desigualdad social, y la clase media y los sectores trabajadores son los que más aportan en términos de impuestos, mientras que las grandes empresas y los capitales más altos se benefician de múltiples exenciones.
+Raul Almonte Peguero propone una **modernización fiscal** integral para promover la inversión, la simplificación y la sostenibilidad en el sistema tributario dominicano. Su objetivo es crear un entorno fiscal más competitivo y eficiente que impulse el crecimiento económico y la generación de empleo.
 
 ### Objetivos principales:
-1. **Impuestos Justos**: Se busca que los que más tienen, más contribuyan. Se establecerá un sistema progresivo, donde las personas con mayores ingresos y grandes empresas aporten más proporcionalmente al bienestar social.
-2. **Eliminación de Exenciones a Grandes Empresas**: Muchas grandes corporaciones y entidades están exentas de pagar impuestos esenciales que deberían ser destinados a fortalecer la economía nacional y los servicios públicos. Esta reforma busca eliminar tales exenciones.
-3. **Fortalecimiento de la Recaudación**: El objetivo es mejorar la capacidad de recaudación para financiar programas sociales, educación, salud y otras áreas clave, garantizando que los servicios básicos sean accesibles para todos los ciudadanos.
-4. **Simplificación Tributaria**: Se propone hacer el sistema tributario más accesible, claro y eficiente, eliminando trámites burocráticos y haciendo que el proceso de pago de impuestos sea menos costoso tanto para el gobierno como para los ciudadanos.
-5. **Incentivos Fiscales**: Se ofrecerán incentivos a emprendedores y cooperativas, así como a sectores económicos que contribuyan a la sostenibilidad y el bienestar social, como los sectores verdes, para fomentar la creación de empleo y el crecimiento económico.
+1. **Fomento de la Inversión**: Se crearán incentivos fiscales para atraer inversión nacional y extranjera, especialmente en sectores estratégicos como la tecnología, la manufactura y el turismo sostenible.
+2. **Simplificación Tributaria**: Se reducirán los trámites burocráticos y se facilitará el cumplimiento de las obligaciones fiscales, implementando plataformas digitales y ventanillas únicas para los contribuyentes.
+3. **Sostenibilidad Fiscal**: Se garantizará la sostenibilidad de las finanzas públicas a largo plazo, promoviendo una gestión eficiente de los recursos y combatiendo la evasión y elusión fiscal.
+4. **Apoyo a las Pymes**: Se ofrecerán beneficios fiscales y programas de capacitación para apoyar a las pequeñas y medianas empresas, que son el motor de la economía dominicana.
+5. **Revisión de Exenciones**: Se revisarán las exenciones fiscales existentes para asegurar que sean justificadas y que contribuyan al desarrollo económico y social del país.
 
-Esta reforma no solo busca aumentar los ingresos del Estado, sino también promover la justicia social, permitiendo una redistribución adecuada de los recursos que beneficie a todos los sectores de la sociedad.
+Con esta propuesta, Raul Almonte Peguero busca un sistema fiscal que sea un aliado del crecimiento y la prosperidad de la República Dominicana.
 
 📄 [Descargar propuesta en PDF](./assets/propuestas/reforma_fiscal_progresiva.pdf)

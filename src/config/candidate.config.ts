@@ -17,6 +17,7 @@ export type CandidateConfig = {
   emailContact: string;
   profileImage: string;
   footerImage: string;
+  realImage: string;
   shortBio: string;
   longBio: string;
   localDiscussions: LocalDiscussions[]
@@ -65,172 +66,170 @@ export type CandidateConfig = {
 
 // Default candidate configuration for sample purposes
 const candidateConfig: CandidateConfig = {
-  name: "Ana María Rodríguez",
-  aiName: "AI María",
+  name: "Raul Almonte Peguero",
+  aiName: "AI Raul",
   profileImage: "/images/candidate.png",
   footerImage: "/images/candidate.png",
-  emailContact: "contacto@anamariarodriguez.com",
-  shortBio: "Economista, activista social y candidata a la gobernación comprometida con la justicia social y el desarrollo sostenible.",
-  longBio: "Las políticas de AI Ana Maria serán implementadas por la 'verdadera' Ana María Rodríguez, quien asistirá al Gobierno; por lo tanto, también es importante que los votantes conozcan su trayectoria, actitudes y capacidades. <br /><br />Ana María Rodríguez es una economista con más de 15 años de experiencia en políticas públicas y desarrollo económico. Nacida y criada en una familia trabajadora, Ana María conoce de primera mano los desafíos que enfrentan las familias de clase media. Su carrera ha estado dedicada a crear oportunidades económicas para todos y luchar por un sistema más justo y equitativo.",
+  realImage: "/images/candidate_real.png",
+  emailContact: "contacto@raulalmonte.com",
+  shortBio: "Político experimentado y candidato a la gobernación comprometido con el progreso equilibrado y la democracia.",
+  longBio: "Las políticas de AI Raul serán implementadas por el 'verdadero' Raul Almonte Peguero, quien asistirá al Gobierno; por lo tanto, también es importante que los votantes conozcan su trayectoria, actitudes y capacidades. <br /><br />Raul Almonte Peguero es un abogado y político con más de 20 años de experiencia en la administración pública y el sector privado. Con un enfoque centrista y democrático, Raul busca construir consensos y promover políticas que beneficien a toda la ciudadanía, fomentando el crecimiento económico y la estabilidad social.",
   localDiscussions: [
     {
-      comment: "¿Qué crees que deberíamos hacer con el tema de la migración en el país?",
-      user: "Juan Pérez, empresario"
+      comment: "¿Cuál es su plan para mejorar la economía y crear empleos?",
+      user: "Carlos Méndez, ingeniero"
     },
     {
-      comment: "¿Cuál es tu propuesta para resolver el problema de la vivienda?",
-      user: "Juana Gómez, profesora"
+      comment: "¿Qué medidas propone para fortalecer la seguridad ciudadana?",
+      user: "Sofía Vargas, comerciante"
     },
     {
-      comment: "¿Qué crees que deberíamos hacer con el tema del transito?",
-      user: "Eugenio Martinez, chofer"
+      comment: "¿Cómo piensa abordar los desafíos del sistema educativo?",
+      user: "Elena Cruz, maestra"
     }
   ],
   socialMedia: [
     {
       platform: "twitter",
-      url: "https://twitter.com/anamariarodriguez"
+      url: "https://twitter.com/raulalmonte" // Placeholder URL
     },
     {
       platform: "facebook",
-      url: "https://facebook.com/anamariarodriguez"
+      url: "https://facebook.com/raulalmonte" // Placeholder URL
     },
     {
       platform: "instagram",
-      url: "https://instagram.com/anamariarodriguez"
+      url: "https://instagram.com/raulalmonte" // Placeholder URL
     }
   ],
-  ideology: "progressive",
+  ideology: "centrist", // Changed ideology
   proposals: [
     {
       id: "prop-economy-1",
-      title: "Reforma Fiscal Progresiva",
-      description: "Implementación de un sistema tributario más justo que reduzca la carga fiscal para la clase media y aumente las contribuciones de los grandes capitales y corporaciones.",
+      title: "Modernización Fiscal", // Renamed proposal
+      description: "Implementación de un sistema tributario equilibrado que fomente la inversión, simplifique procesos y asegure la sostenibilidad fiscal.", // Centrist description
       category: "economy",
       resources: [
         {
-          title: "Reforma Fiscal Progresiva",
+          title: "Modernización Fiscal",
           url: "/assets/propuestas/reforma_fiscal_progresiva.pdf"
         }
       ]
     },
     {
       id: "prop-health-1",
-      title: "Salud Universal Accesible",
-      description: "Ampliación del sistema de salud pública para garantizar acceso universal a servicios médicos de calidad, con énfasis en prevención y atención primaria.",
+      title: "Fortalecimiento del Sistema de Salud", // Renamed proposal
+      description: "Mejora del sistema de salud pública para garantizar acceso equitativo a servicios médicos de calidad, optimizando la gestión y los recursos.", // Centrist description
       category: "health",
       resources: [
         {
-          title: "Salud Universal Accesible",
+          title: "Fortalecimiento del Sistema de Salud",
           url: "/assets/propuestas/salud_universal_accesible.pdf"
         }
       ]
     },
     {
       id: "prop-education-1",
-      title: "Educación Gratuita y de Calidad",
-      description: "Garantizar educación pública gratuita desde preescolar hasta universidad, con inversión en infraestructura, tecnología y capacitación docente.",
+      title: "Educación de Calidad para el Futuro", // Renamed proposal
+      description: "Impulsar la calidad educativa en todos los niveles, invirtiendo en infraestructura, tecnología y formación docente para preparar a los estudiantes para los desafíos del siglo XXI.", // Centrist description
       category: "education",
       resources: [
         {
-          title: "Educacion Gratuita y de Calidad",
+          title: "Educacion de Calidad para el Futuro",
           url: "/assets/propuestas/educacion_gratuita_y_de_calidad.pdf"
         }
       ]
     },
     {
       id: "prop-environment-1",
-      title: "Transición Energética Verde",
-      description: "Plan de 10 años para transformar la matriz energética hacia fuentes renovables, creando empleos verdes y reduciendo emisiones de carbono.",
+      title: "Desarrollo Sostenible y Energía Limpia", // Renamed proposal
+      description: "Promover un desarrollo económico compatible con la protección ambiental, incentivando el uso de energías limpias y la gestión eficiente de recursos.", // Centrist description
       category: "environment",
       resources: [
         {
-          title: "Transición Energética Verde",
+          title: "Desarrollo Sostenible y Energía Limpia",
           url: "/assets/propuestas/transicion_energetica_verde.pdf"
         }
       ]
     },
     {
       id: "prop-security-1",
-      title: "Reforma Integral de Seguridad",
-      description: "Enfoque preventivo que combine inversión social en comunidades vulnerables con modernización y profesionalización de cuerpos policiales.",
+      title: "Seguridad Ciudadana y Convivencia", // Renamed proposal
+      description: "Fortalecer la seguridad ciudadana mediante la modernización policial, la prevención del delito y la promoción de la convivencia pacífica en las comunidades.", // Centrist description
       category: "security",
       resources: [
         {
-          title: "Reforma Integral de Seguridad",
+          title: "Seguridad Ciudadana y Convivencia",
           url: "/assets/propuestas/reforma_integral_de_seguridad.pdf"
         }
       ]
     },
     {
       id: "prop-immigration-1",
-      title: "Política de Inmigración Justa y Humana",
-      description: "Implementación de una política migratoria que priorice la integración, el respeto a los derechos humanos y la contribución de los inmigrantes a nuestra sociedad.",
+      title: "Gestión Migratoria Ordenada y Humana", // Renamed proposal
+      description: "Implementar una política migratoria que equilibre el control fronterizo con el respeto a los derechos humanos y la integración ordenada de los inmigrantes.", // Centrist description
       category: "immigration",
       resources: [
         {
-          title: "Política de Inmigración Justa y Humana",
-          url: "/assets/propuestas/politica_inmigracion_justa_y_humana.pdf"
+          title: "Gestión Migratoria Ordenada y Humana",
+          url: "/assets/propuestas/politica_inmigracion_ordenada_y_humana.pdf"
         }
       ]
     }
   ],
-  questionSuggestions: [
-    "¿Cómo beneficiará la reforma fiscal a los más vulnerables?",
-    "¿Qué hará para eliminar exenciones fiscales a grandes corporaciones?",
-    "¿Cómo garantizará el acceso universal a la salud en zonas rurales?",
-    "¿Cómo garantizará la sostenibilidad del sistema de salud?",
-    "¿Cómo combinará gratuidad y calidad en la educación pública?",
-    "¿Cómo reducirá desigualdades en el acceso a educación superior?",
-    "¿Cuáles son los desafíos de la transición energética?",
-    "¿Qué incentivos dará para usar energías limpias?",
-    "¿Cómo involucrará a las comunidades en la seguridad?",
-    "¿Qué reformas hará en el sistema judicial y policial?"
-  ],  
-  education: [
-    "Doctorado en Economía, Universidad Nacional, 2010",
-    "Maestría en Políticas Públicas, Universidad Internacional, 2005",
-    "Licenciatura en Economía, Universidad Estatal, 2003"
+  questionSuggestions: [ // Updated suggestions for centrist candidate
+    "¿Cuál es su plan para impulsar el crecimiento económico?",
+    "¿Cómo propone modernizar el sistema fiscal del país?",
+    "¿Qué medidas tomará para mejorar la eficiencia del sistema de salud?",
+    "¿Cómo piensa fortalecer la calidad de la educación pública?",
+    "¿Cuál es su estrategia para promover las energías limpias?",
+    "¿Cómo abordará el desafío de la seguridad ciudadana?",
+    "¿Qué propone para una gestión migratoria más efectiva?",
+    "¿Cómo fomentará la creación de empleo?"
   ],
-  experience: [
-    "Directora de Desarrollo Económico, Ministerio de Economía (2015-2020)",
-    "Asesora económica en el Congreso Nacional (2010-2015)",
-    "Investigadora en el Instituto de Políticas Públicas (2005-2010)"
+  education: [ // Placeholder education
+    "Maestría en Administración Pública, Universidad Central, 2002",
+    "Licenciatura en Derecho, Universidad Nacional, 1998"
+  ],
+  experience: [ // Placeholder experience
+    "Senador de la República (2016-2024)",
+    "Secretario de Estado (2010-2014)",
+    "Abogado en firma privada (2002-2010)"
   ],
   values: [
     {
-      id: "social-justice",
-      title: "Justicia social e igualdad de oportunidades",
-      description: "Trabajaré para crear un sistema donde todos tengan acceso equitativo a recursos, oportunidades y protecciones sociales independientemente de su origen.",
+      id: "progress-stability", // Updated ID and content
+      title: "Progreso y Estabilidad",
+      description: "Buscaré un desarrollo equilibrado que combine el crecimiento económico con la estabilidad social y política del país.",
       icon: React.createElement(Shield, { className: "text-candidate-primary" })
     },
     {
-      id: "transparency",
-      title: "Transparencia y gobierno abierto",
-      description: "Me comprometo a una gestión pública transparente donde la ciudadanía pueda participar activamente en la toma de decisiones y acceder a información clara.",
+      id: "democracy-participation", // Updated ID and content
+      title: "Democracia y Participación Ciudadana",
+      description: "Fomentaré una democracia sólida con instituciones transparentes y mecanismos efectivos para la participación ciudadana en la toma de decisiones.",
       icon: React.createElement(UserCheck, { className: "text-candidate-primary" })
     },
     {
-      id: "sustainability",
-      title: "Desarrollo sostenible y responsabilidad ambiental",
-      description: "Impulsaré políticas que equilibren el crecimiento económico con la protección del medio ambiente, asegurando recursos para generaciones futuras.",
+      id: "responsibility-efficiency", // Updated ID and content
+      title: "Responsabilidad y Eficiencia Fiscal",
+      description: "Gestionaré los recursos públicos con responsabilidad, buscando la eficiencia en el gasto y la sostenibilidad de las finanzas del Estado.",
       icon: React.createElement(Globe, { className: "text-candidate-primary" })
     },
     {
-      id: "innovation",
-      title: "Innovación y adaptación tecnológica",
-      description: "Promoveré la transformación digital inclusiva que mejore servicios públicos y facilite la participación ciudadana a través de tecnologías accesibles.",
+      id: "opportunity-growth", // Updated ID and content
+      title: "Oportunidad y Crecimiento Económico",
+      description: "Impulsaré políticas que generen oportunidades para todos y fomenten un crecimiento económico inclusivo y sostenible a largo plazo.",
       icon: React.createElement(Lightbulb, { className: "text-candidate-primary" })
     },
     {
-      id: "diversity",
-      title: "Diversidad e inclusión",
-      description: "Defenderé una sociedad que celebre y proteja la diversidad en todas sus formas, garantizando derechos y oportunidades para todos los grupos sociales.",
+      id: "dialogue-consensus", // Updated ID and content
+      title: "Diálogo y Búsqueda de Consensos",
+      description: "Promoveré el diálogo constructivo entre diferentes sectores de la sociedad para encontrar soluciones consensuadas a los desafíos del país.",
       icon: React.createElement(Users, { className: "text-candidate-primary" })
     }
   ],
-  vision: "Por un país próspero, justo y sostenible donde cada persona pueda desarrollar su potencial, con instituciones fuertes, economía dinámica y respeto por el medio ambiente.",
-  voiceEnabled: false,
+  vision: "Construir un país moderno, seguro y con oportunidades para todos, basado en una democracia sólida, una economía competitiva y un Estado eficiente al servicio de la ciudadanía.", // Updated vision
+  voiceEnabled: false, // Keeping voice disabled for now
   voiceConfig: {
     input: {
       provider: "openai",

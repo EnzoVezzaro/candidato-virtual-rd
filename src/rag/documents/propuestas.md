@@ -1,57 +1,57 @@
-# Propuestas Presidenciales 2028 - Ana María Rodríguez
+# Propuestas Presidenciales 2028 - Raul Almonte Peguero
 
-Ana María Rodríguez, candidata presidencial para el 2028, presenta un conjunto de propuestas que buscan transformar la República Dominicana en un país más justo, sostenible y equitativo. Estas propuestas abarcan áreas clave como la reforma fiscal, la salud, la educación, la transición energética y la seguridad. A continuación, te ofrecemos un resumen de cada propuesta, con los enlaces a los archivos correspondientes para más detalles.
-
----
-
-## 1. Reforma Fiscal Progresiva
-
-Ana María Rodríguez propone una reforma fiscal progresiva que busca establecer un sistema tributario más justo y equitativo. Se enfoca en la eliminación de exenciones fiscales para grandes corporaciones y en la creación de un sistema donde los que más tienen, más contribuyan al bienestar social.
-
-Para más detalles, consulta el archivo: [Reforma Fiscal Progresiva](./assets/propuestas/reforma_fiscal_progresiva.pdf)
+Raul Almonte Peguero, candidato presidencial para el 2028, presenta un conjunto de propuestas centradas en el progreso equilibrado, la estabilidad y el fortalecimiento de la democracia en la República Dominicana. Su visión se enfoca en construir consensos y promover políticas que beneficien a toda la ciudadanía. Estas propuestas abarcan áreas clave como la modernización fiscal, la salud, la educación, el desarrollo sostenible y la seguridad ciudadana. A continuación, te ofrecemos un resumen de cada propuesta, con los enlaces a los archivos correspondientes para más detalles.
 
 ---
 
-## 2. Salud Universal Accesible
+## 1. Modernización Fiscal
 
-La candidata propone un sistema de salud universal y accesible para todos los dominicanos, garantizando que nadie quede excluido del acceso a servicios médicos básicos, tratamientos y medicamentos esenciales, independientemente de su nivel económico.
+Raul Almonte Peguero propone una modernización fiscal que busca establecer un sistema tributario equilibrado que fomente la inversión privada, simplifique los procesos para ciudadanos y empresas, y asegure la sostenibilidad fiscal del país a largo plazo, promoviendo un crecimiento económico estable.
 
-Para más detalles, consulta el archivo: [Salud Universal Accesible](./assets/propuestas/salud_universal_accesible.pdf)
-
----
-
-## 3. Educación Gratuita y de Calidad
-
-Ana María Rodríguez se compromete a garantizar la gratuidad y calidad de la educación en todos los niveles, desde la educación preescolar hasta la universitaria. Esta propuesta busca erradicar las desigualdades en el acceso a una educación de calidad y fomentar el desarrollo integral de los estudiantes.
-
-Para más detalles, consulta el archivo: [Educación Gratuita y de Calidad](./assets/propuestas/educacion_gratuita_y_de_calidad.pdf)
+Para más detalles, consulta el archivo: [Modernización Fiscal](./assets/propuestas/reforma_fiscal_progresiva.pdf)
 
 ---
 
-## 4. Transición Energética Verde
+## 2. Fortalecimiento del Sistema de Salud
 
-Con un enfoque en la sostenibilidad, Ana María Rodríguez propone una transición energética hacia fuentes de energía renovable, reduciendo la dependencia de los combustibles fósiles y promoviendo el uso de energías limpias y sostenibles para contribuir al bienestar ambiental y la creación de empleos verdes.
+El candidato propone un fortalecimiento del sistema de salud pública para garantizar un acceso equitativo a servicios médicos de calidad. Esto se logrará optimizando la gestión de los recursos existentes, mejorando la infraestructura hospitalaria en todo el territorio y enfocándose en la atención primaria y la prevención de enfermedades como pilares fundamentales.
 
-Para más detalles, consulta el archivo: [Transición Energética Verde](./assets/propuestas/transicion_energetica_verde.pdf)
-
----
-
-## 5. Reforma Integral de Seguridad
-
-La candidata plantea una reforma integral de seguridad enfocada en la prevención, la justicia, y la rehabilitación. Se fortalecerá la policía y el sistema judicial, y se promoverá la participación activa de las comunidades en la construcción de un entorno más seguro.
-
-Para más detalles, consulta el archivo: [Reforma Integral de Seguridad](./assets/propuestas/reforma_integral_de_seguridad.pdf)
+Para más detalles, consulta el archivo: [Fortalecimiento del Sistema de Salud](./assets/propuestas/salud_universal_accesible.pdf)
 
 ---
 
-## 6. Política de Inmigración Justa y Humana
+## 3. Educación de Calidad para el Futuro
 
-Ana María Rodríguez propone una política migratoria que priorice la integración, el respeto a los derechos humanos y la contribución de los inmigrantes a nuestra sociedad.
+Raul Almonte Peguero se compromete a impulsar la calidad educativa en todos los niveles. Su plan incluye invertir en infraestructura moderna y adecuada, integrar la tecnología de manera efectiva en el proceso de enseñanza-aprendizaje y promover la formación continua y especializada de los docentes para preparar a los estudiantes para los desafíos del siglo XXI.
 
-Para más detalles, consulta el archivo: [Política de Inmigración Justa y Humana](./assets/propuestas/politica_inmigracion_justa_y_humana.pdf)
+Para más detalles, consulta el archivo: [Educación de Calidad para el Futuro](./assets/propuestas/educacion_gratuita_y_de_calidad.pdf)
 
 ---
 
-Estas propuestas representan el compromiso de Ana María Rodríguez con el progreso y bienestar de todos los dominicanos. Para más detalles sobre cada propuesta, consulta los archivos correspondientes.
+## 4. Desarrollo Sostenible y Energía Limpia
+
+Con un enfoque pragmático en la sostenibilidad, Raul Almonte Peguero propone promover un desarrollo económico que sea compatible con la protección del medio ambiente. Se incentivará activamente el uso de energías limpias y renovables, se promoverá la eficiencia energética en todos los sectores y se fortalecerá la gestión responsable de los recursos naturales.
+
+Para más detalles, consulta el archivo: [Desarrollo Sostenible y Energía Limpia](./assets/propuestas/transicion_energetica_verde.pdf)
+
+---
+
+## 5. Seguridad Ciudadana y Convivencia
+
+El candidato plantea fortalecer la seguridad ciudadana mediante la modernización de las fuerzas policiales, dotándolas de mejores recursos y capacitación. Se implementarán estrategias efectivas de prevención del delito basadas en evidencia y se promoverá la convivencia pacífica y la participación activa de las comunidades en la búsqueda de soluciones.
+
+Para más detalles, consulta el archivo: [Seguridad Ciudadana y Convivencia](./assets/propuestas/reforma_integral_de_seguridad.pdf)
+
+---
+
+## 6. Gestión Migratoria Ordenada y Humana
+
+Raul Almonte Peguero propone una política migratoria que equilibre un control fronterizo efectivo y ordenado con el respeto irrestricto a los derechos humanos. Se buscará la integración ordenada de los inmigrantes que cumplan con la ley y se fomentará la cooperación regional para abordar las causas estructurales de la migración.
+
+Para más detalles, consulta el archivo: [Gestión Migratoria Ordenada y Humana](./assets/propuestas/politica_inmigracion_ordenada_y_humana.pdf)
+
+---
+
+Estas propuestas representan el compromiso de Raul Almonte Peguero con el progreso, la estabilidad y el bienestar de todos los dominicanos, buscando construir un futuro mejor a través del diálogo, el consenso y políticas públicas eficientes. Para más detalles sobre cada propuesta, consulta los archivos correspondientes.
 
 ---

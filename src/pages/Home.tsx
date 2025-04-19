@@ -91,7 +91,7 @@ const Home = () => {
                   onClick={handleOpenChat}
                   className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
                   <MicIcon size={18} />
-                  Habla con AI María
+                  Habla con {candidateConfig.aiName}
                 </Button>
               </div>
             </div>
@@ -274,7 +274,7 @@ const Home = () => {
             <div>
               <h3 className="text-xl font-bold mb-2 text-white">Una presidenta <span className="text-teal-400">que realmente representa tu voz.</span></h3>
               <p className="text-gray-200">
-                Las propuestas y decisiones de <strong>AI María</strong> se basarán 100% en lo que piensa y siente la gente.
+                Las propuestas y decisiones de <strong>{candidateConfig.aiName}</strong> se basarán 100% en lo que piensa y siente la gente.
               </p>
             </div>
             
@@ -282,7 +282,7 @@ const Home = () => {
             <div>
               <h3 className="text-xl font-bold mb-2 text-white">Disponible <span className="text-teal-400">24/7, los 365 días del año</span>.</h3>
               <p className="text-gray-200">
-                Una líder con la que realmente puedes hablar, desde donde estés, cuando tú quieras. <strong>AI María escucha. Y responde.</strong>
+                Una líder con la que realmente puedes hablar, desde donde estés, cuando tú quieras. <strong>{candidateConfig.aiName} escucha. Y responde.</strong>
               </p>
             </div>
             <div className="mt-6 absolute" style={{ zIndex: 9 }}>
@@ -290,7 +290,7 @@ const Home = () => {
                 onClick={handleOpenChat}
                 className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
                 <MicIcon size={18} />
-                Habla con AI María
+                Habla con {candidateConfig.aiName}
               </Button>
             </div>
           </div>
@@ -304,7 +304,7 @@ const Home = () => {
       />
 
       {/* Add these styles to your global CSS or tailwind.config.js */}
-      <style jsx>{`
+      <style>{`
         @keyframes scrollLeft {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
