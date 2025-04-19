@@ -91,7 +91,7 @@ const Home = () => {
                   onClick={handleOpenChat}
                   className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
                   <MicIcon size={18} />
-                  Habla con AI María
+                  Habla con {candidateConfig.aiName}
                 </Button>
               </div>
             </div>
@@ -290,7 +290,7 @@ const Home = () => {
                 onClick={handleOpenChat}
                 className="bg-gradient-to-r from-candidate-primary to-candidate-secondary hover:from-blue-600 hover:to-teal-600 text-white font-medium py-2 px-6 rounded-full flex items-center gap-2">
                 <MicIcon size={18} />
-                Habla con AI María
+                Habla con {candidateConfig.aiName}
               </Button>
             </div>
           </div>
