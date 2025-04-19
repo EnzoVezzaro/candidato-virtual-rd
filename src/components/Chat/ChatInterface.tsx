@@ -252,7 +252,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
       <div className="px-6 pb-4 text-left text-sm text-gray-600">
         <p>Esta conversación está siendo grabada con fines de<br />entrenamiento y monitoreo.</p>
         <p className="mt-2">
-          <a href="#" className="text-blue-600">AI Ana Maria privacy policy.</a>
+          <a href="#" className="text-blue-600">{candidateConfig.aiName} privacy policy.</a>
         </p>
       </div>
 
@@ -262,7 +262,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
           <div className="absolute bottom-0 right-0 z-3">
             <img 
               src={candidateConfig.profileImage}
-              alt="AI Ana Maria" 
+              alt={candidateConfig.aiName} 
               className="object-contain"
             />
           </div>
