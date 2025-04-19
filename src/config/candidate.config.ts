@@ -256,7 +256,7 @@ const candidateConfig: CandidateConfig = {
   ragConfig: {
     provider: "supabase",
   },
-  primaryColor: "#1A365D",
+  primaryColor: "#1A365D", 
   secondaryColor: "#7E3AF2",
   accentColor: "#F7B733",
 };
