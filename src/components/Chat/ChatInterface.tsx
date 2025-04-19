@@ -7,6 +7,7 @@ import candidateConfig from '@/config/candidate.config';
 import { generateEnhancedResponse } from '@/utils/enhancedAiUtils';
 import useVoice from '@/hooks/useVoice';
 import ChatMessage, { MessageType } from './ChatMessage';
+import posthog from 'posthog-js';
 
 const INITIAL_MESSAGES: MessageType[] = [
   {
@@ -73,7 +74,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ initialQuestion, onClose 
     const textToSend = messageText || input.trim();
     
     if (!textToSend || isLoading) return;
-
+    // console.log('seding to analitics: ', `[handleSendMessage]: ${candidateConfig.aiName}`, { message: textToSend });
+    posthog.capture(`[userMessage]: ${candidateConfig.aiName}`, { message: textToSend })
+    
     const userMessage: MessageType = {
       id: uuidv4(),
       content: textToSend,
