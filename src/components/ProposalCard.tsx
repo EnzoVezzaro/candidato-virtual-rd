@@ -64,7 +64,7 @@ const ProposalCard: React.FC<ProposalCardProps> = ({ proposal }) => {
   const [initialChatMessage, setInitialChatMessage] = useState('');
 
   const handleOpenChat = () => {
-    setInitialChatMessage(`Me gustaria mas sobre tu propuesta sobre "${proposal.title}"`);
+    setInitialChatMessage(`Me gustaria saber mas sobre tu propuesta "${proposal.title}"`);
     setIsChatDialogOpen(true);
   };
 
