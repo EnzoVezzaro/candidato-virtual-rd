@@ -2,6 +2,7 @@
 
 **Candidata:** AI Karla (Karla Vargas)
 **Categoría:** Seguridad
+**Document:** 📄 [Descargar propuesta en PDF](./assets/propuestas/seguridad_mano_dura.pdf) 
 
 ## Resumen Ejecutivo
 

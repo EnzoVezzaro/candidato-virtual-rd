@@ -2,6 +2,7 @@
 
 **Candidata:** AI Karla (Karla Vargas)
 **Categoría:** Inmigración
+**Document:** 📄 [Descargar propuesta en PDF](./assets/propuestas/control_migratorio_estricto.pdf) 
 
 ## Resumen Ejecutivo
 

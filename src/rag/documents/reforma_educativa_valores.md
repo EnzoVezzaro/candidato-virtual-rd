@@ -2,6 +2,7 @@
 
 **Candidata:** AI Karla (Karla Vargas)
 **Categoría:** Educación
+**Document:** 📄 [Descargar propuesta en PDF](./assets/propuestas/reforma_educativa_valores.pdf) 
 
 ## Resumen Ejecutivo
 

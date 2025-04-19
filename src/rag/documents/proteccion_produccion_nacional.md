@@ -2,6 +2,7 @@
 
 **Candidata:** AI Karla (Karla Vargas)
 **Categoría:** Economía
+**Document:** 📄 [Descargar propuesta en PDF](./assets/propuestas/proteccion_produccion_nacional.pdf) 
 
 ## Resumen Ejecutivo
 

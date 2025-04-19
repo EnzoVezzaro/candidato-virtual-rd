@@ -2,6 +2,7 @@
 
 **Candidata:** AI Karla (Karla Vargas)
 **Categoría:** Educación (asignada por tipo, enfoque en valores)
+**Document:** 📄 [Descargar propuesta en PDF](./assets/propuestas/defensa_valores_familiares.pdf) 
 
 ## Resumen Ejecutivo
 
