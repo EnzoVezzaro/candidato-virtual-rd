@@ -46,8 +46,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isLoading = false })
           "px-4 py-3 rounded-lg max-w-[80%] md:max-w-[70%]",
           isAssistant 
             ? "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-left" 
-            : "bg-candidate-secondary text-white text-right"
+            : "text-white text-right"
         )}
+        style={!isAssistant ? { backgroundColor: candidateConfig.secondaryColor } : {}}
       >
         <div className="flex flex-col">
           {/*
