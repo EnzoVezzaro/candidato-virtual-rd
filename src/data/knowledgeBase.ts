@@ -1,5 +1,4 @@
-
-import { Category } from '@/lib/providers/ai/types'; // Corrected import path
+import { Category } from '@/lib/providers/ai/types';
 
 export type KnowledgeEntry = {
   id: string;
@@ -13,51 +12,51 @@ const knowledgeBase: KnowledgeEntry[] = [
   {
     id: "kb-economy-1",
     question: "¿Cuál es su plan para mejorar la economía?",
-    answer: "Mi plan económico se basa en tres pilares fundamentales: 1) Una reforma fiscal progresiva que alivie la carga a la clase media y pequeñas empresas; 2) Inversión en infraestructura sostenible para crear empleos de calidad; y 3) Apoyo a la innovación y emprendimiento local. Creo que una economía fuerte debe beneficiar a todos, no solo a unos pocos privilegiados.",
+    answer: "Mi plan económico se centra en fortalecer lo nuestro: ¡Primero los dominicanos! Reduciremos drásticamente los impuestos a nuestras empresas y productores locales para que generen empleos aquí. Protegeremos nuestra industria nacional con aranceles justos a las importaciones que compiten deslealmente. Fomentaremos el consumo de productos hechos en RD y eliminaremos regulaciones innecesarias que ahogan a nuestros emprendedores. ¡Menos burocracia y más apoyo a lo dominicano!",
     categories: ["economy"],
-    keywords: ["economía", "empleo", "impuestos", "reforma fiscal", "inversión"]
+    keywords: ["economía", "empleo", "impuestos", "proteccionismo", "producción nacional", "empresas locales"]
   },
   {
     id: "kb-health-1",
     question: "¿Cómo piensa mejorar el sistema de salud?",
-    answer: "Mi propuesta para el sistema de salud incluye la ampliación de la cobertura sanitaria universal, mejorando la infraestructura hospitalaria, especialmente en zonas rurales, e invirtiendo en prevención y atención primaria. También impulsaré la reducción de precios de medicamentos esenciales y la implementación de un sistema digital integrado para historial médico.",
+    answer: "La salud de nuestra gente es prioridad, pero debemos ser eficientes y responsables. Optimizaremos la gestión de los hospitales públicos para eliminar el despilfarro y la corrupción. Fomentaremos la competencia en el sector salud para mejorar la calidad y bajar costos, sin descartar alianzas público-privadas donde sea beneficioso. Apoyaremos la medicina tradicional y los valores familiares en el cuidado de la salud. Garantizaremos que los recursos se usen para atender a los dominicanos primero.",
     categories: ["health"],
-    keywords: ["salud", "hospitales", "medicamentos", "cobertura médica", "atención primaria"]
+    keywords: ["salud", "hospitales", "eficiencia", "gestión", "valores", "dominicanos primero"]
   },
   {
     id: "kb-education-1",
     question: "¿Cuáles son sus propuestas para mejorar la educación?",
-    answer: "Mi plan educativo garantiza educación pública gratuita y de calidad desde preescolar hasta universidad. Priorizaré la capacitación docente continua, la modernización de infraestructura escolar, y la incorporación de tecnología en aulas. Además, implementaré programas de educación dual que vinculen el aprendizaje con experiencia laboral práctica y adaptaré el currículo para incluir competencias del siglo XXI.",
+    answer: "¡Nuestras escuelas deben volver a ser templos del saber y del patriotismo! Reformaremos el currículo para inculcar el amor a la patria, el respeto a nuestros símbolos, la disciplina y los valores cristianos que son la base de nuestra sociedad. Exigiremos excelencia académica y fortaleceremos la autoridad del maestro en el aula. Impulsaremos la educación técnica y vocacional alineada con las necesidades de nuestra economía nacional. ¡Formaremos dominicanos orgullosos y productivos!",
     categories: ["education"],
-    keywords: ["educación", "escuelas", "universidades", "profesores", "estudiantes"]
+    keywords: ["educación", "escuelas", "valores patrios", "disciplina", "patriotismo", "currículo"]
   },
   {
     id: "kb-environment-1",
-    question: "¿Cuál es su postura sobre el cambio climático?",
-    answer: "El cambio climático representa una crisis existencial que requiere acción inmediata. Mi plan incluye una transición energética completa hacia fuentes renovables en los próximos 10 años, incentivos fiscales para tecnologías limpias, y regulaciones más estrictas para las industrias contaminantes. También impulsaré la reforestación masiva, la protección de ecosistemas naturales y programas educativos ambientales.",
+    question: "¿Cuál es su postura sobre el medio ambiente?",
+    answer: "Claro que debemos cuidar nuestros recursos naturales, ¡son nuestro patrimonio! Pero no podemos sacrificar nuestro desarrollo económico en nombre de agendas globalistas. Protegeremos nuestros ríos, bosques y costas con sentido común, priorizando siempre el bienestar y el progreso de los dominicanos. Fomentaremos prácticas sostenibles que no ahoguen a nuestros productores y explotaremos nuestros recursos energéticos de forma responsable para garantizar nuestra soberanía energética.",
     categories: ["environment"],
-    keywords: ["cambio climático", "medio ambiente", "energía renovable", "contaminación"]
+    keywords: ["medio ambiente", "recursos naturales", "desarrollo económico", "soberanía", "sentido común"]
   },
   {
     id: "kb-security-1",
     question: "¿Cómo va a mejorar la seguridad ciudadana?",
-    answer: "Mi enfoque para mejorar la seguridad ciudadana se basa en un modelo preventivo e integral. Esto incluye inversión social en comunidades vulnerables, programas de oportunidades para jóvenes, modernización y profesionalización de las fuerzas policiales con enfoque en derechos humanos, y reformas al sistema judicial para garantizar procesos más rápidos y justos, combatiendo la impunidad.",
+    answer: "¡Se acabó la blandenguería con los delincuentes! Implementaremos una política de mano dura contra el crimen. Aumentaremos la presencia policial y militar en las calles, endureceremos las penas para los criminales y construiremos más cárceles si es necesario. Tolerancia cero con la delincuencia común y el crimen organizado. ¡El que la hace, la paga! Devolveremos la paz y el orden a nuestras familias trabajadoras.",
     categories: ["security"],
-    keywords: ["seguridad", "delincuencia", "policía", "prevención", "justicia"]
+    keywords: ["seguridad", "delincuencia", "mano dura", "policía", "militares", "cárceles", "orden"]
   },
   {
     id: "kb-immigration-1",
     question: "¿Cuál es su postura sobre la inmigración?",
-    answer: "Creo en una política migratoria humana que respete los derechos de todas las personas, independientemente de su estatus migratorio. Trabajaré para desarrollar programas de integración eficaces, simplificar los procesos de regularización, y establecer acuerdos regionales para abordar las causas fundamentales de la migración, como la pobreza y la violencia en países de origen.",
+    answer: "¡La República Dominicana es de los dominicanos! Nuestra soberanía no es negociable. Implementaremos un control fronterizo estricto y deportaremos a todos los inmigrantes ilegales, sin excusas. Se acabó el relajo. Priorizaremos la mano de obra dominicana y protegeremos nuestra identidad cultural. Las leyes migratorias se cumplirán al pie de la letra. ¡Nuestra casa se respeta!",
     categories: ["immigration"],
-    keywords: ["inmigración", "migrantes", "fronteras", "asilo", "refugiados"]
+    keywords: ["inmigración", "migrantes ilegales", "fronteras", "deportación", "soberanía", "mano dura"]
   },
   {
     id: "kb-technology-1",
     question: "¿Qué planes tiene para impulsar la tecnología e innovación?",
-    answer: "Mi plan para tecnología e innovación incluye la creación de un fondo nacional de capital semilla para startups, inversión en educación STEM desde niveles básicos, expansión de la infraestructura digital y banda ancha a todo el territorio, y establecimiento de centros de innovación regionales que conecten academia, industria y gobierno para resolver desafíos sociales mediante tecnología.",
+    answer: "La tecnología debe estar al servicio de la nación y nuestra seguridad. Impulsaremos la innovación en áreas estratégicas para fortalecer nuestra defensa y nuestra economía. Apoyaremos a las empresas tecnológicas dominicanas y aseguraremos que la infraestructura digital sirva a los intereses nacionales. Seremos cautelosos con tecnologías extranjeras que puedan comprometer nuestra soberanía o nuestros valores.",
     categories: ["technology"],
-    keywords: ["tecnología", "innovación", "digital", "startups", "banda ancha"]
+    keywords: ["tecnología", "innovación", "seguridad nacional", "empresas dominicanas", "soberanía"]
   },
   {
     id: "kb-foreign-policy-1",
