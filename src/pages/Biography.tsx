@@ -64,7 +64,7 @@ const Biography = () => {
               <div className="p-6 md:w-2/3">
                 <h2 className="text-2xl font-bold mb-2">{candidateConfig.name}</h2>
                 <p className="text-candidate-secondary dark:text-candidate-accent font-medium mb-4">
-                  {ideologyLabel()}
+                  {candidateConfig.shortBio}
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 mb-6" dangerouslySetInnerHTML={{ __html: candidateConfig.longBio }} />
                 <div className="flex flex-wrap gap-4">
