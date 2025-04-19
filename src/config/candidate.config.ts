@@ -97,140 +97,139 @@ const candidateConfig: CandidateConfig = {
     },
     {
       platform: "instagram",
-      url: "https://instagram.com/anamariarodriguez"
+      url: "https://instagram.com/aikarla" // Placeholder URL
     }
   ],
-  ideology: "progressive",
-  proposals: [
+  ideology: "conservative", // Updated ideology
+  proposals: [ // Updated proposals reflecting conservative/nationalist stance
+    {
+      id: "prop-immigration-1",
+      title: "Fortalecimiento de la Soberanía y Control Migratorio Estricto",
+      description: "Implementación de políticas rigurosas para el control fronterizo, deportación de inmigrantes ilegales y priorización de la mano de obra nacional.",
+      category: "immigration", // Changed category order
+      resources: [
+        {
+          title: "Plan de Control Migratorio", // Placeholder PDF name
+          url: "/assets/propuestas/control_migratorio_estricto.pdf" // Placeholder PDF path
+        }
+      ]
+    },
+    {
+      id: "prop-values-1",
+      title: "Defensa de los Valores Tradicionales y la Familia",
+      description: "Promoción de políticas públicas que refuercen la estructura familiar tradicional, los valores cristianos y la cultura dominicana.",
+      category: "education", // Changed category to fit existing types
+      resources: [
+        {
+          title: "Iniciativa por los Valores Familiares", // Placeholder PDF name
+          url: "/assets/propuestas/defensa_valores_familiares.pdf" // Placeholder PDF path
+        }
+      ]
+    },
     {
       id: "prop-economy-1",
-      title: "Reforma Fiscal Progresiva",
-      description: "Implementación de un sistema tributario más justo que reduzca la carga fiscal para la clase media y aumente las contribuciones de los grandes capitales y corporaciones.",
+      title: "Estímulo a la Inversión Nacional y Reducción de Impuestos",
+      description: "Reducción de la carga fiscal para empresas nacionales, incentivos para la creación de empleos locales y fomento del emprendimiento dominicano.",
       category: "economy",
       resources: [
         {
-          title: "Reforma Fiscal Progresiva",
-          url: "/assets/propuestas/reforma_fiscal_progresiva.pdf"
-        }
-      ]
-    },
-    {
-      id: "prop-health-1",
-      title: "Salud Universal Accesible",
-      description: "Ampliación del sistema de salud pública para garantizar acceso universal a servicios médicos de calidad, con énfasis en prevención y atención primaria.",
-      category: "health",
-      resources: [
-        {
-          title: "Salud Universal Accesible",
-          url: "/assets/propuestas/salud_universal_accesible.pdf"
-        }
-      ]
-    },
-    {
-      id: "prop-education-1",
-      title: "Educación Gratuita y de Calidad",
-      description: "Garantizar educación pública gratuita desde preescolar hasta universidad, con inversión en infraestructura, tecnología y capacitación docente.",
-      category: "education",
-      resources: [
-        {
-          title: "Educacion Gratuita y de Calidad",
-          url: "/assets/propuestas/educacion_gratuita_y_de_calidad.pdf"
-        }
-      ]
-    },
-    {
-      id: "prop-environment-1",
-      title: "Transición Energética Verde",
-      description: "Plan de 10 años para transformar la matriz energética hacia fuentes renovables, creando empleos verdes y reduciendo emisiones de carbono.",
-      category: "environment",
-      resources: [
-        {
-          title: "Transición Energética Verde",
-          url: "/assets/propuestas/transicion_energetica_verde.pdf"
+          title: "Plan de Estímulo Económico Nacional", // Placeholder PDF name
+          url: "/assets/propuestas/estimulo_inversion_nacional.pdf" // Placeholder PDF path
         }
       ]
     },
     {
       id: "prop-security-1",
-      title: "Reforma Integral de Seguridad",
-      description: "Enfoque preventivo que combine inversión social en comunidades vulnerables con modernización y profesionalización de cuerpos policiales.",
+      title: "Seguridad Ciudadana con Mano Dura",
+      description: "Aumento de la presencia policial, endurecimiento de penas para delitos graves y combate frontal contra el crimen organizado y la delincuencia común.",
       category: "security",
       resources: [
         {
-          title: "Reforma Integral de Seguridad",
-          url: "/assets/propuestas/reforma_integral_de_seguridad.pdf"
+          title: "Estrategia de Seguridad Nacional", // Placeholder PDF name
+          url: "/assets/propuestas/seguridad_mano_dura.pdf" // Placeholder PDF path
         }
       ]
     },
     {
-      id: "prop-immigration-1",
-      title: "Política de Inmigración Justa y Humana",
-      description: "Implementación de una política migratoria que priorice la integración, el respeto a los derechos humanos y la contribución de los inmigrantes a nuestra sociedad.",
-      category: "immigration",
+      id: "prop-education-1",
+      title: "Reforma Educativa con Enfoque en Valores Patrios",
+      description: "Revisión del currículo escolar para fortalecer la enseñanza de la historia dominicana, los valores cívicos, la disciplina y el respeto a los símbolos patrios.",
+      category: "education",
       resources: [
         {
-          title: "Política de Inmigración Justa y Humana",
-          url: "/assets/propuestas/politica_inmigracion_justa_y_humana.pdf"
+          title: "Reforma Educativa Nacionalista", // Placeholder PDF name
+          url: "/assets/propuestas/reforma_educativa_valores.pdf" // Placeholder PDF path
+        }
+      ]
+    },
+    {
+      id: "prop-production-1",
+      title: "Protección de la Producción Nacional",
+      description: "Implementación de medidas para proteger a los productores locales frente a la competencia desleal, subsidios estratégicos y fomento del consumo de productos dominicanos.",
+      category: "economy", // Could also be 'agriculture' or similar
+      resources: [
+        {
+          title: "Plan de Protección al Productor Nacional", // Placeholder PDF name
+          url: "/assets/propuestas/proteccion_produccion_nacional.pdf" // Placeholder PDF path
         }
       ]
     }
   ],
-  questionSuggestions: [
-    "¿Cómo beneficiará la reforma fiscal a los más vulnerables?",
-    "¿Qué hará para eliminar exenciones fiscales a grandes corporaciones?",
-    "¿Cómo garantizará el acceso universal a la salud en zonas rurales?",
-    "¿Cómo garantizará la sostenibilidad del sistema de salud?",
-    "¿Cómo combinará gratuidad y calidad en la educación pública?",
-    "¿Cómo reducirá desigualdades en el acceso a educación superior?",
-    "¿Cuáles son los desafíos de la transición energética?",
-    "¿Qué incentivos dará para usar energías limpias?",
-    "¿Cómo involucrará a las comunidades en la seguridad?",
-    "¿Qué reformas hará en el sistema judicial y policial?"
-  ],  
-  education: [
-    "Doctorado en Economía, Universidad Nacional, 2010",
-    "Maestría en Políticas Públicas, Universidad Internacional, 2005",
-    "Licenciatura en Economía, Universidad Estatal, 2003"
+  questionSuggestions: [ // Updated suggestions
+    "¿Qué medidas específicas propone para controlar la inmigración ilegal?",
+    "¿Cómo planea defender los valores tradicionales en la legislación?",
+    "¿Qué incentivos fiscales ofrecerá a las empresas nacionales?",
+    "¿Cuál es su plan para reducir la criminalidad en las calles?",
+    "¿Cómo incorporará los valores patrios en el currículo escolar?",
+    "¿De qué manera protegerá a los agricultores locales?",
+    "¿Cuál es su postura sobre los acuerdos de libre comercio?",
+    "¿Qué rol juega la fe en su visión de gobierno?",
+    "¿Cómo piensa fortalecer las fuerzas armadas y la policía?",
+    "¿Qué hará para promover el orgullo nacional?"
   ],
-  experience: [
-    "Directora de Desarrollo Económico, Ministerio de Economía (2015-2020)",
-    "Asesora económica en el Congreso Nacional (2010-2015)",
-    "Investigadora en el Instituto de Políticas Públicas (2005-2010)"
+  education: [ // Updated education
+    "Maestría en Derecho Corporativo, Pontificia Universidad Católica Madre y Maestra (PUCMM), 2008", // Placeholder
+    "Licenciatura en Derecho, Universidad Autónoma de Santo Domingo (UASD), 2005" // Placeholder
   ],
-  values: [
+  experience: [ // Updated experience
+    "Socia Directora, Vargas & Asociados - Derecho Corporativo (2012-Presente)", // Placeholder
+    "Asesora Legal Senior, Grupo Empresarial Dominicano (2008-2012)", // Placeholder
+    "Coordinadora Nacional, Movimiento Patriótico Dominicano (2015-Presente)" // Placeholder
+  ],
+  values: [ // Updated values
     {
-      id: "social-justice",
-      title: "Justicia social e igualdad de oportunidades",
-      description: "Trabajaré para crear un sistema donde todos tengan acceso equitativo a recursos, oportunidades y protecciones sociales independientemente de su origen.",
-      icon: React.createElement(Shield, { className: "text-candidate-primary" })
+      id: "sovereignty",
+      title: "Soberanía Nacional",
+      description: "Defenderé incansablemente las fronteras, la independencia y los intereses de la República Dominicana ante cualquier influencia externa.",
+      icon: React.createElement(Shield, { className: "text-candidate-primary" }) // Reusing icon
     },
     {
-      id: "transparency",
-      title: "Transparencia y gobierno abierto",
-      description: "Me comprometo a una gestión pública transparente donde la ciudadanía pueda participar activamente en la toma de decisiones y acceder a información clara.",
-      icon: React.createElement(UserCheck, { className: "text-candidate-primary" })
+      id: "order-security",
+      title: "Orden y Seguridad",
+      description: "Implementaré mano dura contra la delincuencia para garantizar la paz y la tranquilidad de todas las familias dominicanas.",
+      icon: React.createElement(UserCheck, { className: "text-candidate-primary" }) // Reusing icon
     },
     {
-      id: "sustainability",
-      title: "Desarrollo sostenible y responsabilidad ambiental",
-      description: "Impulsaré políticas que equilibren el crecimiento económico con la protección del medio ambiente, asegurando recursos para generaciones futuras.",
-      icon: React.createElement(Globe, { className: "text-candidate-primary" })
+      id: "family-tradition",
+      title: "Valores Familiares y Tradicionales",
+      description: "Protegeré la institución familiar como núcleo de la sociedad y promoveré los valores cristianos que nos definen como nación.",
+      icon: React.createElement(Users, { className: "text-candidate-primary" }) // Reusing icon
     },
     {
-      id: "innovation",
-      title: "Innovación y adaptación tecnológica",
-      description: "Promoveré la transformación digital inclusiva que mejore servicios públicos y facilite la participación ciudadana a través de tecnologías accesibles.",
-      icon: React.createElement(Lightbulb, { className: "text-candidate-primary" })
+      id: "national-economy",
+      title: "Economía al Servicio de la Nación",
+      description: "Fomentaré la producción local, la inversión dominicana y la creación de empleos dignos para nuestra gente.",
+      icon: React.createElement(Lightbulb, { className: "text-candidate-primary" }) // Reusing icon
     },
     {
-      id: "diversity",
-      title: "Diversidad e inclusión",
-      description: "Defenderé una sociedad que celebre y proteja la diversidad en todas sus formas, garantizando derechos y oportunidades para todos los grupos sociales.",
-      icon: React.createElement(Users, { className: "text-candidate-primary" })
+      id: "patriotism",
+      title: "Patriotismo y Unidad Nacional",
+      description: "Inspiraré el orgullo por nuestra bandera, nuestra historia y nuestra cultura, fortaleciendo la unidad del pueblo dominicano.",
+      icon: React.createElement(Globe, { className: "text-candidate-primary" }) // Reusing icon
     }
   ],
-  vision: "Por un país próspero, justo y sostenible donde cada persona pueda desarrollar su potencial, con instituciones fuertes, economía dinámica y respeto por el medio ambiente.",
-  voiceEnabled: false,
+  vision: "Por una República Dominicana fuerte, soberana y orgullosa de sus raíces, donde el orden, la familia y el trabajo duro sean los pilares del progreso y la prosperidad nacional.", // Updated vision
+  voiceEnabled: false, // Keeping voice disabled for now
   voiceConfig: {
     input: {
       provider: "openai",

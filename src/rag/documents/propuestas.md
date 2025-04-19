@@ -1,57 +1,57 @@
-# Propuestas Presidenciales 2028 - Ana María Rodríguez
+# Propuestas Presidenciales 2028 - AI Karla (Karla Vargas)
 
-Ana María Rodríguez, candidata presidencial para el 2028, presenta un conjunto de propuestas que buscan transformar la República Dominicana en un país más justo, sostenible y equitativo. Estas propuestas abarcan áreas clave como la reforma fiscal, la salud, la educación, la transición energética y la seguridad. A continuación, te ofrecemos un resumen de cada propuesta, con los enlaces a los archivos correspondientes para más detalles.
-
----
-
-## 1. Reforma Fiscal Progresiva
-
-Ana María Rodríguez propone una reforma fiscal progresiva que busca establecer un sistema tributario más justo y equitativo. Se enfoca en la eliminación de exenciones fiscales para grandes corporaciones y en la creación de un sistema donde los que más tienen, más contribuyan al bienestar social.
-
-Para más detalles, consulta el archivo: [Reforma Fiscal Progresiva](./assets/propuestas/reforma_fiscal_progresiva.pdf)
+AI Karla, representando la visión de la abogada y activista Karla Vargas, presenta un conjunto de propuestas firmes y decididas para fortalecer la República Dominicana, basadas en los principios de soberanía nacional, orden, valores tradicionales y protección de la economía local. Estas propuestas abarcan áreas clave como inmigración, valores familiares, economía, seguridad, educación y producción nacional. A continuación, un resumen de cada propuesta, con enlaces a los documentos correspondientes para más detalles (Nota: los documentos PDF son placeholders y deben ser creados).
 
 ---
 
-## 2. Salud Universal Accesible
+## 1. Fortalecimiento de la Soberanía y Control Migratorio Estricto
 
-La candidata propone un sistema de salud universal y accesible para todos los dominicanos, garantizando que nadie quede excluido del acceso a servicios médicos básicos, tratamientos y medicamentos esenciales, independientemente de su nivel económico.
+AI Karla propone una política de tolerancia cero con la inmigración ilegal. Se implementarán controles fronterizos rigurosos, se agilizarán las deportaciones y se priorizará la mano de obra dominicana para proteger nuestros empleos y nuestra identidad nacional. ¡La soberanía no se negocia!
 
-Para más detalles, consulta el archivo: [Salud Universal Accesible](./assets/propuestas/salud_universal_accesible.pdf)
-
----
-
-## 3. Educación Gratuita y de Calidad
-
-Ana María Rodríguez se compromete a garantizar la gratuidad y calidad de la educación en todos los niveles, desde la educación preescolar hasta la universitaria. Esta propuesta busca erradicar las desigualdades en el acceso a una educación de calidad y fomentar el desarrollo integral de los estudiantes.
-
-Para más detalles, consulta el archivo: [Educación Gratuita y de Calidad](./assets/propuestas/educacion_gratuita_y_de_calidad.pdf)
+Para más detalles, consulta el archivo: [Plan de Control Migratorio](/assets/propuestas/control_migratorio_estricto.pdf)
 
 ---
 
-## 4. Transición Energética Verde
+## 2. Defensa de los Valores Tradicionales y la Familia
 
-Con un enfoque en la sostenibilidad, Ana María Rodríguez propone una transición energética hacia fuentes de energía renovable, reduciendo la dependencia de los combustibles fósiles y promoviendo el uso de energías limpias y sostenibles para contribuir al bienestar ambiental y la creación de empleos verdes.
+La candidata promoverá activamente políticas que refuercen la estructura familiar tradicional, los valores cristianos y la rica cultura dominicana. Se protegerá la institución familiar como pilar fundamental de nuestra sociedad.
 
-Para más detalles, consulta el archivo: [Transición Energética Verde](./assets/propuestas/transicion_energetica_verde.pdf)
-
----
-
-## 5. Reforma Integral de Seguridad
-
-La candidata plantea una reforma integral de seguridad enfocada en la prevención, la justicia, y la rehabilitación. Se fortalecerá la policía y el sistema judicial, y se promoverá la participación activa de las comunidades en la construcción de un entorno más seguro.
-
-Para más detalles, consulta el archivo: [Reforma Integral de Seguridad](./assets/propuestas/reforma_integral_de_seguridad.pdf)
+Para más detalles, consulta el archivo: [Iniciativa por los Valores Familiares](/assets/propuestas/defensa_valores_familiares.pdf)
 
 ---
 
-## 6. Política de Inmigración Justa y Humana
+## 3. Estímulo a la Inversión Nacional y Reducción de Impuestos
 
-Ana María Rodríguez propone una política migratoria que priorice la integración, el respeto a los derechos humanos y la contribución de los inmigrantes a nuestra sociedad.
+AI Karla impulsará la economía dominicana reduciendo la carga fiscal para las empresas nacionales, ofreciendo incentivos claros para la creación de empleos locales y fomentando el espíritu emprendedor de nuestra gente. ¡Menos impuestos, más producción local!
 
-Para más detalles, consulta el archivo: [Política de Inmigración Justa y Humana](./assets/propuestas/politica_inmigracion_justa_y_humana.pdf)
+Para más detalles, consulta el archivo: [Plan de Estímulo Económico Nacional](/assets/propuestas/estimulo_inversion_nacional.pdf)
 
 ---
 
-Estas propuestas representan el compromiso de Ana María Rodríguez con el progreso y bienestar de todos los dominicanos. Para más detalles sobre cada propuesta, consulta los archivos correspondientes.
+## 4. Seguridad Ciudadana con Mano Dura
+
+Se acabó la impunidad. AI Karla implementará una estrategia de seguridad con mano dura, aumentando la presencia policial y militar, endureciendo las penas para los delincuentes y combatiendo frontalmente el crimen organizado. ¡Recuperaremos la paz en nuestras calles!
+
+Para más detalles, consulta el archivo: [Estrategia de Seguridad Nacional](/assets/propuestas/seguridad_mano_dura.pdf)
+
+---
+
+## 5. Reforma Educativa con Enfoque en Valores Patrios
+
+La educación volverá a centrarse en la excelencia académica y en la formación de ciudadanos orgullosos de su patria. Se revisará el currículo para fortalecer la enseñanza de la historia dominicana, los valores cívicos, la disciplina y el respeto a nuestros símbolos patrios.
+
+Para más detalles, consulta el archivo: [Reforma Educativa Nacionalista](/assets/propuestas/reforma_educativa_valores.pdf)
+
+---
+
+## 6. Protección de la Producción Nacional
+
+Defenderemos a nuestros productores locales de la competencia desleal. Se implementarán medidas de protección, subsidios estratégicos y se fomentará activamente el consumo de productos hechos en la República Dominicana. ¡Lo nuestro primero!
+
+Para más detalles, consulta el archivo: [Plan de Protección al Productor Nacional](/assets/propuestas/proteccion_produccion_nacional.pdf)
+
+---
+
+Estas propuestas representan el compromiso de AI Karla (Karla Vargas) con una República Dominicana fuerte, soberana y próspera. Para más detalles sobre cada propuesta, consulta los archivos correspondientes.
 
 ---

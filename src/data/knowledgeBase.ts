@@ -1,5 +1,5 @@
 
-import { Category } from '@/config/candidate.config';
+import { Category } from '@/lib/providers/ai/types'; // Corrected import path
 
 export type KnowledgeEntry = {
   id: string;
@@ -62,9 +62,9 @@ const knowledgeBase: KnowledgeEntry[] = [
   {
     id: "kb-foreign-policy-1",
     question: "¿Cómo sería su política exterior?",
-    answer: "Mi política exterior se basará en la defensa de la soberanía nacional, la promoción de la cooperación multilateral, y el fortalecimiento de relaciones comerciales justas. Priorizaré alianzas estratégicas con países que compartan nuestros valores democráticos y de derechos humanos, buscaré diversificar nuestras relaciones comerciales, y tendré una participación activa en foros internacionales sobre cambio climático y desarrollo sostenible.",
+    answer: "Nuestra política exterior será simple: ¡Primero la República Dominicana! Defenderemos nuestra soberanía con uñas y dientes ante cualquier organismo o potencia extranjera. No aceptaremos imposiciones ideológicas ni agendas globalistas. Nuestras relaciones internacionales se basarán estrictamente en el interés nacional, buscando socios comerciales que nos respeten y no se inmiscuyan en nuestros asuntos internos. ¡Seremos amigos de quienes respeten nuestra casa!",
     categories: ["foreign_policy"],
-    keywords: ["política exterior", "relaciones internacionales", "diplomacia", "tratados", "comercio internacional"]
+    keywords: ["política exterior", "relaciones internacionales", "soberanía", "nacionalismo", "interés nacional"]
   }
 ];
 
