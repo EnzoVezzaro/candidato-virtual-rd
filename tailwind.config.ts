@@ -54,9 +54,9 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				candidate: {
-					primary: '#1A365D',
-					secondary: '#7E3AF2',
-					accent: '#F7B733',
+					primary: 'var(--candidate-primary)',
+					secondary: 'var(--candidate-secondary)', 
+					accent: 'var(--candidate-accent)',
 					light: '#F3F4F6',
 					dark: '#111827'
 				},
