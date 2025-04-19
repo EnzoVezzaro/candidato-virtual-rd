@@ -272,7 +272,7 @@ const Home = () => {
             
             {/* Middle info */}
             <div>
-              <h3 className="text-xl font-bold mb-2 text-white">Una presidenta <span className="text-teal-400">que realmente representa tu voz.</span></h3>
+              <h3 className="text-xl font-bold mb-2 text-white">Un presidente <span className="text-teal-400">que realmente representa tu voz.</span></h3>
               <p className="text-gray-200">
                 Las propuestas y decisiones de <strong>{candidateConfig.aiName}</strong> se basarán 100% en lo que piensa y siente la gente.
               </p>
